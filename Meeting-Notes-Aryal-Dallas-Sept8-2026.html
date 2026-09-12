@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Meeting Speaking Notes — USDA NIFA CBG Alignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aggie-blue: #004684;
+            --aggie-gold: #FDB927;
+            --aggie-dark: #00264d;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --border-color: #cbd5e1;
+            --green-700: #15803d;
+            --green-50: #f0fdf4;
+            --amber-700: #b45309;
+            --amber-50: #fffbeb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #e2e8f0;
+            color: var(--slate-800);
+            line-height: 1.5;
+            padding: 24px;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Top Action Bar (hidden in print) */
+        .action-bar {
+            background: var(--aggie-dark);
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--aggie-gold);
+            text-transform: uppercase;
+        }
+
+        .print-btn {
+            background: var(--aggie-gold);
+            color: var(--aggie-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+
+        .print-btn:hover {
+            background: #e5a720;
+            transform: translateY(-1px);
+        }
+
+        /* Document Header */
+        .doc-header {
+            border-bottom: 3px solid var(--aggie-gold);
+            padding: 28px 36px 20px;
+            background: linear-gradient(135deg, #004684 0%, #002d57 100%);
+            color: #ffffff;
+        }
+
+        .inst-line {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--aggie-gold);
+            margin-bottom: 6px;
+        }
+
+        .doc-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .doc-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .meta-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            background: var(--slate-100);
+            padding: 12px 36px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 12px;
+        }
+
+        .meta-item strong {
+            display: block;
+            font-size: 10px;
+            color: var(--slate-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .meta-item span {
+            font-weight: 600;
+            color: var(--slate-800);
+        }
+
+        /* Document Body */
+        .content {
+            padding: 28px 36px 36px;
+        }
+
+        .section-block {
+            margin-bottom: 26px;
+        }
+
+        .section-heading {
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--aggie-blue);
+            border-left: 4px solid var(--aggie-gold);
+            padding-left: 10px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-tag {
+            font-size: 10px;
+            background: var(--slate-100);
+            color: var(--slate-600);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Strategy Box */
+        .callout-box {
+            background: var(--slate-50);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+
+        .callout-box.primary {
+            background: #f0f7ff;
+            border-color: #bfdbfe;
+        }
+
+        .callout-box.success {
+            background: var(--green-50);
+            border-color: #bbf7d0;
+        }
+
+        .callout-box.warning {
+            background: var(--amber-50);
+            border-color: #fde68a;
+        }
+
+        .script-quote {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.5;
+            background: #ffffff;
+            border-left: 4px solid var(--aggie-blue);
+            padding: 10px 14px;
+            margin: 8px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .why-it-works {
+            font-size: 12px;
+            color: var(--slate-600);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* Points Grid */
+        .points-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .point-card {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 14px 16px;
+            background: #ffffff;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .point-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .point-num {
+            font-size: 11px;
+            font-weight: 800;
+            background: var(--aggie-blue);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .point-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--aggie-dark);
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        /* Matrix Table */
+        table.matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12.5px;
+            margin-top: 8px;
+        }
+
+        table.matrix-table th, table.matrix-table td {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        table.matrix-table th {
+            background: var(--aggie-dark);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table.matrix-table tr:nth-child(even) {
+            background: var(--slate-50);
+        }
+
+        .dallas-worry {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        .your-answer {
+            color: #065f46;
+            font-weight: 600;
+        }
+
+        /* Team Roster Strip */
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .roster-card {
+            background: var(--slate-50);
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 11.5px;
+        }
+
+        .roster-name {
+            font-weight: 800;
+            color: var(--aggie-blue);
+        }
+
+        .roster-role {
+            color: var(--slate-600);
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .roster-badge {
+            display: inline-block;
+            font-size: 9.5px;
+            font-weight: 700;
+            background: #dcfce7;
+            color: #166534;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-top: 4px;
+        }
+
+        /* Footer */
+        .doc-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 16px 36px;
+            font-size: 11px;
+            color: var(--slate-600);
+            text-align: center;
+            background: var(--slate-50);
+        }
+
+        /* Print Specifics */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .page-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            .doc-header {
+                padding: 18px 24px 14px;
+            }
+
+            .meta-strip {
+                padding: 8px 24px;
+            }
+
+            .content {
+                padding: 18px 24px;
+            }
+
+            .section-block {
+                margin-bottom: 18px;
+                page-break-inside: avoid;
+            }
+
+            .point-card {
+                page-break-inside: avoid;
+                margin-bottom: 8px;
+            }
+
+            table.matrix-table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <!-- Top Action Bar -->
+    <div class="action-bar">
+        <span class="action-title">CONFIDENTIAL &bull; EXECUTIVE MEETING BRIEFING</span>
+        <button class="print-btn" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="doc-header">
+        <div class="inst-line">Department of Natural Resources & Environmental Design &bull; NC A&T</div>
+        <h1 class="doc-title">Executive Speaking Notes & Strategic Talking Points</h1>
+        <div class="doc-subtitle">Meeting with Department Chair Dr. Niroj Aryal & Program Coordinator Dallas Bretzman</div>
+    </header>
+
+    <!-- Meta Strip -->
+    <div class="meta-strip">
+        <div class="meta-item">
+            <strong>Date & Time</strong>
+            <span>Tuesday, Sept 8, 2026</span>
+        </div>
+        <div class="meta-item">
+            <strong>Proposal Track</strong>
+            <span>USDA NIFA 1890 CBG ($750k Integrated)</span>
+        </div>
+        <div class="meta-item">
+            <strong>Immediate Deadline</strong>
+            <span>NOI Due Wed, Sept 9 (Tomorrow)</span>
+        </div>
+        <div class="meta-item">
+            <strong>Lead PI</strong>
+            <span>W. Chris Harrison, MLA, ASLA</span>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- 1. Executive Objective -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>1. Core Meeting Objective</span>
+                <span class="section-tag">High Level</span>
+            </div>
+            <div class="callout-box primary">
+                <p style="font-size: 13.5px; line-height: 1.5;">
+                    <strong>The Goal:</strong> Reassure Dr. Aryal that this proposal represents an effortless <strong>$750,000 institutional win</strong> for NRED that brings in funded Graduate Assistants and college visibility, while completely <strong>releasing Dallas from any workload or curriculum anxiety</strong>. Lock in Dr. Aryal’s approval to lodge the 1-page non-binding NOI placeholder by Wednesday, Sept 9.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. The 60-Second Opening -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>2. The 60-Second Opening (Disarm & De-Escalate)</span>
+                <span class="section-tag">Critical First Move</span>
+            </div>
+            <div class="callout-box success">
+                <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--green-700); margin-bottom: 4px;">Scripted Opening Statement:</div>
+                <div class="script-quote">
+                    "Dr. Aryal, before we jump into details, I want to say that Dallas is doing a fantastic job stewarding the new BSLA curriculum. Launching a revised catalog four weeks ago is a heavy lift, and protecting the stability of our studio classes is the right instinct. I 100% support her keeping her full focus there."
+                </div>
+                <div class="why-it-works">
+                    &bull; <strong>Why it works:</strong> Diffuses all adversarial tension immediately. Dallas cannot attack someone who is praising her in front of her supervisor.
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Key Talking Points -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>3. Five Essential Talking Points</span>
+                <span class="section-tag">Core Script</span>
+            </div>
+            <div class="points-list">
+
+                <!-- Point 1 -->
+                <div class="point-card">
+                    <div class="point-header">
+                        <span class="point-num">Point 1</span>
+                        <span class="point-title">Zero Syllabus or Catalog Burden (No Mandated Changes)</span>
+                    </div>
+                    <div class="script-quote">
+                        "I want to clear up a major misconception: this grant does <strong>not</strong> alter our approved course catalog, syllabi, or LAAB accreditation in any way. It is strictly an <strong>optional experiential enrichment resource</strong>—providing extracurricular student workshops, software access, and drone/sensor tools that faculty can draw from only if they choose. If an instructor doesn't want to touch it, they don't have to."
+                    </div>
+                    <div class="why-it-works">&bull; Eliminates Dallas's fear that unapproved catalog changes or accreditation risks are being imposed.</div>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="point-card">
+                    <div class="point-header">
+                        <span class="point-num">Point 2</span>
+                        <span class="point-title">Dallas is 100% Off the Hook (Zero Labor for Her)</span>
+                    </div>
+                    <div class="script-quote">
+                        "Dallas has a full plate with coordinator duties. Dallas, I want to make sure you know: <strong>you have zero obligation on this grant.</strong> You do not need to serve as Co-PI, do any reporting, or manage technology. That initial placeholder was strictly a courtesy for future summer support if you wanted it. Our multi-college team handles 100% of the administration."
+                    </div>
+                    <div class="why-it-works">&bull; Dallas opposed this because she feared extra work. Removing the duty evaporates her motivation to resist.</div>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="point-card">
+                    <div class="point-header">
+                        <span class="point-num">Point 3</span>
+                        <span class="point-title">The Grant Directly Funds the Technical Labor (2 GRAs + 2 UGAs)</span>
+                    </div>
+                    <div class="script-quote">
+                        "Dallas raised a fair question about technical maintenance and faculty expertise. But that's exactly why the budget is structured to fund <strong>2 Graduate Research Assistants ($16k/yr stipends) and 2 Paid Undergraduate Assistants ($4k/yr)</strong>. These funded students manage the hardware, troubleshoot software, and run student tutorials. It brings over <strong>$120,000 directly into student financial support</strong> for NRED."
+                    </div>
+                    <div class="why-it-works">&bull; Chairs love funded Graduate Assistant lines. It solves the technical labor problem without faculty effort.</div>
+                </div>
+
+                <!-- Point 4 -->
+                <div class="point-card">
+                    <div class="point-header">
+                        <span class="point-num">Point 4</span>
+                        <span class="point-title">The $750,000 Integrated Project Upgrade & Powerhouse Coalition</span>
+                    </div>
+                    <div class="script-quote">
+                        "The response across CAES and CoST has been overwhelmingly positive:
+                        <br>&bull; <strong>Dr. Omon Isikhuemhen</strong> joined and recommended we step up to the <strong>$750k Integrated Track (Teaching + Research)</strong>, pairing his forest mycology research with our spatial digital twins.
+                        <br>&bull; <strong>Dr. Leila Hashemi Beni</strong> (Director, GEMS Institute, CoST) is leading remote sensing and LiDAR.
+                        <br>&bull; <strong>Dr. Porch&eacute; Spence</strong> is leading environmental studies and water/soil conservation.
+                        <br>&bull; <strong>Charlie Hopper</strong> is anchoring field demonstration at the Small Farm Research & Innovation Center (SFRIC)."
+                    </div>
+                    <div class="why-it-works">&bull; Shows Dr. Aryal that walking away now means turning down $750k and alienating prominent senior colleagues across two colleges.</div>
+                </div>
+
+                <!-- Point 5 -->
+                <div class="point-card">
+                    <div class="point-header">
+                        <span class="point-num">Point 5</span>
+                        <span class="point-title">Charlie Hopper's Pivot: Framing as "Environmental Planning & Living Landscapes"</span>
+                    </div>
+                    <div class="script-quote">
+                        "As Charlie Hopper wisely noted, the broader college is ready to move on these technologies. To completely protect the BSLA brand, we are framing the primary title as <strong>Environmental Planning, Digital Agroforestry, and Living Landscapes</strong>. LA and Environmental Studies students gain all the stipends, credentials, and tools, while the BSLA program remains fully autonomous."
+                    </div>
+                    <div class="why-it-works">&bull; Completely sidesteps the internal LA curriculum dispute and aligns with college-wide strategic priorities.</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Objection & Rebuttal Matrix -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>4. Quick Objection & Rebuttal Matrix</span>
+                <span class="section-tag">Handling Pushback</span>
+            </div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th style="width: 45%;">If Dallas or Aryal Says...</th>
+                        <th style="width: 55%;">Your Strategic Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="dallas-worry">"Our new BSLA curriculum just started 4 weeks ago; it's too early."</td>
+                        <td class="your-answer">"Exactly why this is co-curricular enrichment, not a catalog revision. It doesn't touch the syllabus, but brings $750k in lab resources that students can use immediately."</td>
+                    </tr>
+                    <tr>
+                        <td class="dallas-worry">"Our faculty don't have the technical expertise to teach this."</td>
+                        <td class="your-answer">"Core faculty don't have to teach it. The grant funds 2 GRAs and 2 UGAs specifically to run tutorials, field sensors, and drone workflows."</td>
+                    </tr>
+                    <tr>
+                        <td class="dallas-worry">"We should wait a year or two until we have assessment baselines."</td>
+                        <td class="your-answer">"In federal funding cycles, waiting two years forfeits $750k. The grant itself funds the baseline assessment tools and student tracking we need for future accreditations."</td>
+                    </tr>
+                    <tr>
+                        <td class="dallas-worry">"This seems like a lot of work right now before Wednesday."</td>
+                        <td class="your-answer">"The Wednesday NOI is just a 1-page non-binding placeholder to keep NC A&T eligible. I have already drafted it; no one else has to write a single word."</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 5. Committed Collaborator Coalition -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>5. Committed Multi-College Coalition</span>
+                <span class="section-tag">Unanimous Support</span>
+            </div>
+            <div class="roster-grid">
+                <div class="roster-card">
+                    <div class="roster-name">Dr. Leila Hashemi Beni</div>
+                    <div class="roster-role">Director, GEMS Institute (CoST)</div>
+                    <div class="roster-badge">&bull; Co-PI / LiDAR & UAV Remote Sensing</div>
+                </div>
+                <div class="roster-card">
+                    <div class="roster-name">Dr. Omon Isikhuemhen</div>
+                    <div class="roster-role">Professor, Plant & Soil Sciences (CAES)</div>
+                    <div class="roster-badge">&bull; Co-PI / $750k Integrated Research Lead</div>
+                </div>
+                <div class="roster-card">
+                    <div class="roster-name">Dr. Porch&eacute; L. Spence</div>
+                    <div class="roster-role">Assistant Professor, Env. Studies (NRED)</div>
+                    <div class="roster-badge">&bull; Co-PI / Soil Health & NRCS Credentialing</div>
+                </div>
+                <div class="roster-card">
+                    <div class="roster-name">Momtanu Chakraborty</div>
+                    <div class="roster-role">Biological Engineering / Canvas Lead</div>
+                    <div class="roster-badge">&bull; Co-PI / Pix4D & Module Dissemination</div>
+                </div>
+                <div class="roster-card">
+                    <div class="roster-name">Charles Hopper</div>
+                    <div class="roster-role">Director, SFRIC</div>
+                    <div class="roster-badge">&bull; Key Personnel / Field Living Laboratory</div>
+                </div>
+                <div class="roster-card">
+                    <div class="roster-name">W. Chris Harrison</div>
+                    <div class="roster-role">Assistant Professor, LA (NRED)</div>
+                    <div class="roster-badge" style="background:#fef3c7; color:#92400e;">&bull; Project Director / Lead PI</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. The Closing Ask -->
+        <section class="section-block">
+            <div class="section-heading">
+                <span>6. The Closing Motion for Dr. Aryal</span>
+                <span class="section-tag">Action Item</span>
+            </div>
+            <div class="callout-box warning">
+                <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--amber-700); margin-bottom: 4px;">Closing Statement to Dr. Aryal:</div>
+                <div class="script-quote">
+                    "Dr. Aryal, Wednesday's 1-page NOI is simply an internal placeholder so NC A&T doesn't forfeit eligibility for this $750k track. It commits us to nothing binding. Let's lodge the placeholder with you tomorrow, keep Dallas completely unburdened, and let our cross-college team refine the research scope with Dr. Omon and Dr. Leila ahead of the September 28 campus deadline."
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="doc-footer">
+        North Carolina Agricultural and Technical State University &bull; College of Agriculture and Environmental Sciences<br>
+        Department of Natural Resources and Environmental Design &bull; Strategic Research & Grants Initiative
+    </footer>
+</div>
+
+</body>
+</html>

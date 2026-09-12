@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA Program Situation Report — June 29, 2026 | NC A&T</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── PRINT & SCREEN RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --aggie-blue: #004684;
+      --aggie-gold: #FDB927;
+      --aggie-gold-light: #fef8e7;
+      --dark: #1a1a2e;
+      --text: #2d2d3a;
+      --text-light: #5a5a6e;
+      --bg: #ffffff;
+      --border: #e2e2ea;
+      --section-bg: #f8f8fc;
+      --red: #c62828;
+      --green: #2e7d32;
+      --amber: #e65100;
+      --blue: #1565c0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in;
+    }
+
+    /* ── HEADER ── */
+    .report-header {
+      border-bottom: 4px solid var(--aggie-blue);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .report-header h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 20pt;
+      font-weight: 700;
+      color: var(--aggie-blue);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .report-header h1 span {
+      display: block;
+      font-size: 11pt;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .report-meta {
+      text-align: right;
+      font-size: 9pt;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .report-meta strong { color: var(--aggie-blue); }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+    .section-header {
+      background: var(--aggie-blue);
+      color: white;
+      padding: 6px 12px;
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-header .num {
+      background: var(--aggie-gold);
+      color: var(--aggie-blue);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11pt;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--aggie-blue);
+      margin: 12px 0 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+    }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin-bottom: 10px;
+    }
+    th {
+      background: var(--aggie-blue);
+      color: white;
+      text-align: left;
+      padding: 5px 8px;
+      font-weight: 600;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f9f9fc; }
+    tr.highlight td { background: var(--aggie-gold-light); font-weight: 600; }
+    tr.alert td { background: #fff3e0; }
+    tr.danger td { background: #ffebee; }
+
+    /* ── KPI CARDS ── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .kpi {
+      border: 2px solid var(--aggie-blue);
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .kpi .value {
+      font-size: 22pt;
+      font-weight: 800;
+      color: var(--aggie-blue);
+      line-height: 1;
+    }
+    .kpi .label {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .kpi.gold { border-color: var(--aggie-gold); }
+    .kpi.gold .value { color: var(--amber); }
+    .kpi.red { border-color: var(--red); }
+    .kpi.red .value { color: var(--red); }
+    .kpi.green { border-color: var(--green); }
+    .kpi.green .value { color: var(--green); }
+
+    /* ── ALERTS ── */
+    .alert {
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 9.5pt;
+      margin-bottom: 10px;
+      border-left: 4px solid;
+    }
+    .alert.warn { background: #fff3e0; border-color: var(--amber); }
+    .alert.danger { background: #ffebee; border-color: var(--red); }
+    .alert.info { background: #e3f2fd; border-color: var(--blue); }
+    .alert.success { background: #e8f5e9; border-color: var(--green); }
+    .alert strong:first-child { display: block; font-size: 9pt; text-transform: uppercase; margin-bottom: 4px; }
+    .alert strong { font-size: inherit; text-transform: none; }
+
+    /* ── ACTION ITEMS ── */
+    .action-list {
+      list-style: none;
+      padding: 0;
+    }
+    .action-list li {
+      padding: 5px 8px 5px 28px;
+      position: relative;
+      font-size: 9.5pt;
+      border-bottom: 1px solid var(--border);
+    }
+    .action-list li::before {
+      content: '☐';
+      position: absolute;
+      left: 8px;
+      top: 5px;
+      font-size: 12pt;
+    }
+    .action-list li.done::before { content: '☑'; color: var(--green); }
+    .action-list li.done { color: var(--text-light); text-decoration: line-through; }
+    .action-list li .owner {
+      display: inline-block;
+      background: var(--aggie-blue);
+      color: white;
+      padding: 0 6px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .action-list li .priority {
+      display: inline-block;
+      padding: 0 5px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+    .priority.p0 { background: var(--red); color: white; }
+    .priority.p1 { background: var(--amber); color: white; }
+    .priority.p2 { background: var(--blue); color: white; }
+
+    /* ── SCHEDULE BLOCK ── */
+    .schedule {
+      font-family: 'Courier New', monospace;
+      font-size: 8.5pt;
+      background: #f5f5f8;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      white-space: pre;
+    }
+
+    /* ── COMPARISON BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+      font-weight: 700;
+    }
+    .badge.gold { background: var(--aggie-gold); color: var(--aggie-blue); }
+
+    /* ── TWO-COL LAYOUT ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── FOOTER ── */
+    .report-footer {
+      margin-top: 20px;
+      padding-top: 8px;
+      border-top: 2px solid var(--aggie-blue);
+      font-size: 8pt;
+      color: var(--text-light);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 0; font-size: 10pt; max-width: 100%; }
+      @page { margin: 0.4in; size: letter; }
+      .no-print { display: none; }
+
+      /* Keep header + attendees together */
+      .report-header { page-break-after: avoid; }
+
+      /* Let sections flow — they're too big to avoid-break */
+      .section { page-break-inside: auto; page-break-before: auto; }
+
+      /* But keep small blocks together */
+      .section-header { page-break-after: avoid; }
+      table { page-break-inside: avoid; }
+      .alert { page-break-inside: avoid; }
+      .kpi-grid { page-break-inside: avoid; }
+      .two-col { page-break-inside: avoid; }
+      tr { page-break-inside: avoid; }
+
+      /* Force background colors to print */
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    }
+
+    /* ── PAGE BREAK HINTS ── */
+    .page-break { page-break-before: always; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <div style="background:var(--aggie-gold); height:6px;"></div>
+  <header class="report-header" style="display:block; background:var(--aggie-blue); color:white; padding:16px 24px; margin-bottom:0;">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <img src="North_Carolina_A%26T_Aggies_logo.svg" alt="NC A&T" style="height:50px; width:auto;">
+        <div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:10pt; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--aggie-gold); margin-bottom:2px;">North Carolina A&T State University</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:7.5pt; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:rgba(255,255,255,0.85); line-height:1.6;">College of Agriculture &amp; Environmental Sciences<br>Dept. of Natural Resources &amp; Environmental Design</div>
+        </div>
+      </div>
+      <div style="text-align:right; font-size:8pt; color:rgba(255,255,255,0.8); line-height:1.5;">
+        <strong style="color:var(--aggie-gold);">CONFIDENTIAL</strong><br>
+        Internal Briefing Document
+      </div>
+    </div>
+  </header>
+  <div style="background:var(--aggie-blue); border-top:1px solid rgba(255,255,255,0.15); padding:12px 24px 16px; margin-bottom:20px;">
+    <h1 style="font-family:'Source Serif 4',Georgia,serif; font-size:20pt; font-weight:700; color:white; line-height:1.1; margin:0;">
+      Program of Landscape Architecture
+      <span style="display:block; font-size:11pt; font-weight:400; color:var(--aggie-gold); margin-top:4px;">Situation Report & Strategic Briefing</span>
+    </h1>
+    <div style="font-size:9pt; color:rgba(255,255,255,0.7); margin-top:8px;">
+      <strong style="color:white;">Date: June 29, 2026</strong> &nbsp;&nbsp;|&nbsp;&nbsp; Prepared by: W. Chris Harrison, MLA, ASLA
+    </div>
+  </div>
+
+  <!-- ═══════════════ ATTENDEES ═══════════════ -->
+  <div style="background: var(--aggie-gold-light); padding: 8px 12px; border-radius: 4px; margin-bottom: 16px; font-size: 9.5pt;">
+    <strong style="color: var(--aggie-blue);">Meeting Attendees:</strong>
+    Dr. Niroj Aryal (Department Head, NRED) &nbsp;•&nbsp;
+    Perry Howard (Strategic Advisor) &nbsp;•&nbsp;
+    W. Chris Harrison (Program Coordinator, LA)
+  </div>
+
+  <!-- ═══════════════ 1. ENROLLMENT ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1</span>
+      Fall 2026 Enrollment — Live Data (as of June 25, 2026)
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="value">40</div>
+        <div class="label">Total Admitted</div>
+      </div>
+      <div class="kpi gold">
+        <div class="value">12</div>
+        <div class="label">Deposited</div>
+      </div>
+      <div class="kpi green">
+        <div class="value">10</div>
+        <div class="label">Registered</div>
+      </div>
+      <div class="kpi red">
+        <div class="value">28</div>
+        <div class="label">Not Yet Deposited</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>Pipeline Breakdown</h3>
+        <table>
+          <tr><td>Freshmen</td><td style="text-align:right;font-weight:600;">33</td></tr>
+          <tr><td>Transfers</td><td style="text-align:right;font-weight:600;">7</td></tr>
+          <tr><td>In-State (NC)</td><td style="text-align:right;font-weight:600;">22</td></tr>
+          <tr><td>Out-of-State</td><td style="text-align:right;font-weight:600;">18</td></tr>
+          <tr><td>Average GPA</td><td style="text-align:right;font-weight:600;">3.72</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Geographic Distribution (Out-of-State)</h3>
+        <table>
+          <tr><td>Maryland</td><td style="text-align:right;">4</td></tr>
+          <tr><td>Virginia</td><td style="text-align:right;">4</td></tr>
+          <tr><td>Other (IN, IL, AR, CO, GA, SC, NY, FL, PA)</td><td style="text-align:right;">10</td></tr>
+        </table>
+        <div class="alert info">
+          <strong>Revenue Note</strong>
+          18 out-of-state students @ ~$26K tuition vs. ~$8K in-state = significant tuition revenue differential.
+        </div>
+      </div>
+    </div>
+
+    <h3>✅ Confirmed Class — Deposited & Registered (10 Students)</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Student</th><th>State</th><th>GPA</th><th>Type</th><th>Hours</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Bishop, Kendyll</td><td>NC</td><td>3.78</td><td>Freshman</td><td>16</td></tr>
+        <tr><td>2</td><td>Cradle, Logan Denise</td><td>NY</td><td>3.50</td><td>Freshman</td><td>16</td></tr>
+        <tr><td>3</td><td>Jeremy Baez, Mariliz</td><td>NC</td><td>3.14</td><td>Freshman</td><td>16</td></tr>
+        <tr><td>4</td><td>Smith, D'Asia Anise</td><td>NC</td><td>3.70</td><td>Freshman</td><td>16</td></tr>
+        <tr><td>5</td><td>Vasquez, Aaliyah Shanae</td><td>VA</td><td>3.95</td><td>Freshman</td><td>17</td></tr>
+        <tr><td>6</td><td>Armstrong, Lloyd</td><td>NC</td><td>3.19</td><td>Transfer</td><td>12</td></tr>
+        <tr><td>7</td><td>Collins, Casey</td><td>NC</td><td>—</td><td>Transfer</td><td>12</td></tr>
+        <tr><td>8</td><td>Craig, Amy</td><td>FL</td><td>—</td><td>Transfer</td><td>17</td></tr>
+        <tr><td>9</td><td>Lotz, Therese</td><td>NC</td><td>—</td><td>Transfer</td><td>16</td></tr>
+        <tr><td>10</td><td>Wilson, Erin Kathleen</td><td>NC</td><td>—</td><td>Transfer</td><td>16</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert warn">
+      <strong>⚠ Yield Management Needed</strong>
+      28 admitted students (70%) have NOT deposited. Top uncommitted targets by GPA: Ingrid Mack (4.89, SC), Favour Okodua-Oboh (4.78, MD), Mei Lin Brown (4.25, NC), Andrea Gonzalez-Miranda (4.20, NC), Maxwell Cleveland (4.00, GA). Personal outreach by James Davis should begin immediately.
+    </div>
+
+    <div class="alert warn">
+      <strong>⚠ 2 Deposited Students Not Yet Registered</strong>
+      Browning, Akaila N (NC, 3.10 GPA) and Goldsmith-Powell, Quaezhar (NC, 3.50 GPA) have deposited but are NOT registered for classes. They need NSO immediately.
+    </div>
+
+    <div class="alert danger" style="border-width:3px; padding:12px 16px;">
+      <strong>🚨 CRITICAL: CAPACITY PLANNING IF MORE DEPOSITS ARRIVE</strong>
+      With 28 admitted students still uncommitted and 6 weeks until Fall classes, <strong>every new deposit increases pressure</strong> on three fronts:<br><br>
+      <strong>1. MULTIPLE SECTIONS NEEDED:</strong> LDAR 147 (Design Foundations) has <strong>only 1 seat left</strong> in a room that holds 16. If even 2–3 more students deposit, a <strong>second section of LDAR 147 is mandatory</strong>. Dr. Yang would need to teach two sections — requiring a second room and adjusted schedule. LDAR 103 (Discovery) also only has 7 seats remaining.<br><br>
+      <strong>2. STUDIO SPACE:</strong> Carver Hall studios are already at or near capacity. CARVE 211 (16 seats) is maxed. CARVE 122 (20 seats) has LDAR 247 at 13/20. If freshman enrollment exceeds 16, we have <strong>no overflow studio space</strong> without displacing upper-level cohorts. Pin-up, review, and breakout space is already inadequate.<br><br>
+      <strong>3. LAPTOPS & EQUIPMENT:</strong> Every freshman needs access to Civil 3D, Adobe CC, SketchUp, and Land F/X. Current laptop inventory and software license count were sized for 10–15 freshmen. <strong>At 15+ freshmen, we need additional laptops and license seats immediately.</strong> Lead time for university procurement is typically 4–6 weeks — which means orders must go in NOW.
+    </div>
+
+    <div class="alert success" style="border-width:3px; padding:12px 16px;">
+      <strong>✅ PROPOSED STAFFING SOLUTION</strong>
+      To maintain the <strong>15:1 studio ratio</strong> and absorb additional freshmen:<br><br>
+      <strong>1. Hire Perry Howard as Adjunct</strong> — Perry takes over <strong>LDAR 347 Landform & Stormwater Studio</strong> (MWF 9–11:50), which <strong>frees Christin Evans</strong> from that course to take on the freshman section.<br><br>
+      <strong>2. Christin Evans teaches LDAR 147 Section 2</strong> — With Christin freed from LDAR 347, she picks up a <strong>second section of LDAR 147 (Freshman Studio)</strong> for overflow freshmen beyond the 16-seat cap in CARVE 211. Christin can only teach freshman-level courses.<br><br>
+      <strong>Note:</strong> LDAR 380 (Master Planning Field Study) is <strong>not offered Fall 2026</strong> under the new curriculum. It is currently in Banner and needs to be cancelled.<br><br>
+      <strong>Net effect:</strong> Perry's hire directly enables the freshman capacity expansion. Total FTE rises to <strong>6.0</strong> — above LAAB minimum of 5.
+    </div>
+  </div>
+
+  <!-- ═══════════════ 2. FACULTY ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">2</span>
+      Faculty & Staffing
+    </div>
+
+    <h3>Full-Time Faculty</h3>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Rank</th><th>Role</th><th>Cohort Assignment</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Dr. Niroj Aryal</strong></td><td>Department Head</td><td>Administration & Oversight</td><td>—</td></tr>
+        <tr><td><strong>W. Chris Harrison</strong></td><td>Program Coordinator</td><td>Freshman Cohort</td><td>LDAR 147 Sec 3, LDAR 170 Sec 3, LDAR 400 Internship (remote)</td></tr>
+        <tr><td><strong>Dallas C. Bretzman</strong></td><td>Full-Time Lecturer</td><td>Sophomore Cohort Lead</td><td>Sophomores (LDAR 248, 244)</td></tr>
+        <tr><td><strong>Jeffrey A. Kuehner</strong></td><td>Full-Time Lecturer</td><td>Junior Cohort Lead</td><td>Juniors (LDAR 348, 349)</td></tr>
+        <tr class="highlight"><td><strong>Dr. Jun Yang</strong> ✅ CONFIRMED</td><td>Tenure-Track Asst Prof</td><td>Freshman Cohort Lead</td><td>Freshmen (LDAR 147/148, 170/171)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div>
+        <h3>Adjunct Faculty</h3>
+        <table>
+          <tr><td><strong>Anna Reaves</strong></td><td>LDAR 103, 104, 255</td></tr>
+          <tr><td><strong>Christin Evans</strong></td><td><em style="color:var(--green);">LDAR 147 Sec 2 + LDAR 170 Sec 2 — freshman only</em></td></tr>
+          <tr><td><strong>Preston Montague</strong></td><td>LDAR 299, 442</td></tr>
+          <tr class="highlight"><td><strong>Perry Howard</strong> <em style="color:var(--green);">🆕 PROPOSED</em></td><td><em style="color:var(--green);">LDAR 347 Landform & Stormwater Studio (MWF 9–11:50)</em></td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Staff</h3>
+        <table>
+          <tr><td><strong>Leavie James Davis</strong></td><td>Logistics & Operations / Recruitment Lead</td></tr>
+        </table>
+        <h3>FTE Calculation</h3>
+        <table>
+          <tr><td>W. Chris Harrison</td><td style="text-align:right;">1.0 FTE</td></tr>
+          <tr><td>Jeff Kuehner</td><td style="text-align:right;">1.0 FTE</td></tr>
+          <tr><td>Dallas Bretzman</td><td style="text-align:right;">1.0 FTE</td></tr>
+          <tr><td>Dr. Jun Yang (incoming)</td><td style="text-align:right;">1.0 FTE</td></tr>
+          <tr class="highlight"><td><strong>Full-Time Subtotal</strong></td><td style="text-align:right;"><strong>4.0 FTE</strong></td></tr>
+          <tr><td>Anna Reaves (adjunct)</td><td style="text-align:right;">0.5 FTE</td></tr>
+          <tr><td>Christin Evans (adjunct)</td><td style="text-align:right;">0.5 FTE</td></tr>
+          <tr><td>Preston Montague (adjunct)</td><td style="text-align:right;">0.5 FTE</td></tr>
+          <tr class="highlight"><td><strong>Current Total</strong></td><td style="text-align:right;"><strong>5.5 FTE ✅</strong></td></tr>
+          <tr class="alert"><td>+ Perry Howard (proposed adjunct)</td><td style="text-align:right;">+0.5 FTE</td></tr>
+          <tr class="highlight"><td><strong>Projected Total</strong></td><td style="text-align:right;"><strong>6.0 FTE ✅</strong></td></tr>
+        </table>
+        <div class="alert success" style="margin-top:6px;">
+          <strong>LAAB Minimum Exceeded</strong>
+          6.0 FTE exceeds the LAAB accreditation minimum of 5 instructional FTEs.
+        </div>
+      </div>
+    </div>
+
+    <div class="alert info">
+      <strong>Dr. Yang Onboarding</strong>
+      Start date: <strong>August 14, 2026</strong> (campus arrival Aug 10). Action needed: computer setup (Mr. Davis → Mr. Brown), office assignment, Banner/Blackboard course access, LDAR 147 & 170 instructor assignment in Banner.
+    </div>
+  </div>
+
+  <!-- ═══════════════ 3. SCHEDULE ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">3</span>
+      Fall 2026 Course Schedule — Official Banner Data
+    </div>
+
+    <div class="alert info">
+      <strong>Source: Official Banner Export (provided by Dr. Aryal, June 29, 2026)</strong>
+      13 sections across 4 faculty + 3 adjuncts. All rooms in Carver Hall. Total enrollment: 137 student-seats filled.
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>CRN</th><th>Course</th><th>Title</th><th>Cr</th><th>Days</th><th>Time</th><th>Room</th><th>Instructor</th><th>Cap</th><th>Enrl</th><th>Avail</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>11402</td><td>LDAR 103</td><td>LA Discovery</td><td>3</td><td>TR</td><td>9:30–10:45</td><td>—</td><td>Reaves A.</td><td>21</td><td>14</td><td>7</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr class="danger"><td>10554</td><td>LDAR 147</td><td>Design Foundations</td><td>3</td><td>MWF</td><td>10:00–11:50</td><td><strong>CARVE 211</strong></td><td>Harrison W. <em>→ Yang</em></td><td>16</td><td><strong>15</strong></td><td style="color:var(--red);font-weight:700;"><strong>1</strong></td><td style="color:var(--red);font-weight:700;">⚠️ 1 LEFT</td></tr>
+        <tr><td>10192</td><td>LDAR 170</td><td>LA Graphics I</td><td>3</td><td>TR</td><td>11:00–12:15</td><td>—</td><td>Harrison W. <em>→ Yang</em></td><td>23</td><td>11</td><td>12</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>10555</td><td>LDAR 204</td><td>Plant Materials</td><td>3</td><td>TR</td><td>9:30–10:45</td><td>—</td><td>Bretzman D.</td><td>18</td><td>12</td><td>6</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>10556</td><td>LDAR 247</td><td>Social Systems Studio</td><td>6</td><td>MWF</td><td>9:00–11:50</td><td><strong>CARVE 122</strong></td><td>Bretzman D.</td><td>20</td><td>13</td><td>7</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>11420</td><td>LDAR 299</td><td>Resume Portfolio Seminar</td><td>1</td><td>TR</td><td>11:00–12:15</td><td><strong>CARVE 165</strong></td><td>Montague P.</td><td>26</td><td>11</td><td>15</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>10557</td><td>LDAR 345</td><td>Site Systems</td><td>3</td><td>TR</td><td>9:30–10:45</td><td><strong>CARVE 122</strong></td><td>Harrison W.</td><td>20</td><td>7</td><td>13</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr style="text-decoration:line-through; color:#999;"><td>10768</td><td>LDAR 380</td><td>Master Planning Field Study</td><td>6</td><td>MWF</td><td>9:00–11:50</td><td>CARVE 203</td><td>Evans C.</td><td>13</td><td>8</td><td>5</td><td style="color:var(--red);font-weight:700;">❌ CANCEL — not in new curriculum</td></tr>
+        <tr><td>13557</td><td>LDAR 400-001</td><td>Special Problems</td><td>3</td><td>TR</td><td>11:00–12:15</td><td>—</td><td>Harrison W.</td><td>15</td><td>4</td><td>11</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>13558</td><td>LDAR 400-002</td><td>Special Problems</td><td>3</td><td>TR</td><td>11:00–12:15</td><td>—</td><td>Bretzman D.</td><td>15</td><td>6</td><td>9</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr class="danger"><td>10558</td><td>LDAR 440</td><td>Design Proposal Writing</td><td>3</td><td>TR</td><td>11:00–12:15</td><td><strong>CARVE 203</strong></td><td>Kuehner J.</td><td>7</td><td><strong>7</strong></td><td style="color:var(--red);font-weight:700;"><strong>0</strong></td><td style="color:var(--red);font-weight:700;">🔴 CLOSED</td></tr>
+        <tr><td>11618</td><td>LDAR 447</td><td>Collaborative Studio</td><td>6</td><td>MWF</td><td>9:00–11:50</td><td><strong>CARVE 205</strong></td><td>Kuehner J.</td><td>20</td><td>9</td><td>11</td><td style="color:var(--green);">✅ Open</td></tr>
+        <tr><td>12845</td><td>LDAR 455</td><td>Current Issues in LA</td><td>3</td><td>TR</td><td>9:30–10:45</td><td>—</td><td>Kuehner J.</td><td>20</td><td>10</td><td>10</td><td style="color:var(--green);">✅ Open</td></tr>
+      </tbody>
+      <tfoot>
+        <tr style="background:var(--aggie-blue);color:white;"><td colspan="8"><strong>13 Sections Total</strong></td><td><strong>—</strong></td><td><strong>137</strong></td><td></td><td></td></tr>
+      </tfoot>
+    </table>
+
+    <h3>Room Usage in Carver Hall</h3>
+    <table>
+      <thead><tr><th>Room</th><th>Cap</th><th>Courses Assigned</th><th>Time Conflicts?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CARVE 122</strong></td><td>20</td><td>LDAR 247 (MWF 9–11:50), LDAR 345 (TR 9:30–10:45)</td><td style="color:var(--green);">None ✅</td></tr>
+        <tr><td><strong>CARVE 165</strong></td><td>34</td><td>LDAR 299 (TR 11:00–12:15)</td><td style="color:var(--green);">None ✅</td></tr>
+        <tr><td><strong>CARVE 203</strong></td><td>13</td><td>LDAR 440 (TR 11:00–12:15) — <em>LDAR 380 cancelled</em></td><td style="color:var(--green);">None ✅</td></tr>
+        <tr><td><strong>CARVE 205</strong></td><td>40</td><td>LDAR 447 (MWF 9–11:50)</td><td style="color:var(--green);">None ✅</td></tr>
+        <tr class="alert"><td><strong>CARVE 211</strong></td><td>16</td><td>LDAR 147 (MWF 10:00–11:50) — <strong>15 of 16 seats filled</strong></td><td style="color:var(--red);font-weight:600;">At capacity</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert danger" style="word-break:normal; overflow-wrap:normal;">
+      <strong>🔴 IMMEDIATE ACTION REQUIRED</strong><br>
+      • <strong>LDAR 440</strong> (CRN 10558) — CLOSED, 0 seats. Cap is only 7 in a room that holds 13. Increase cap or add second section.<br>
+      • <strong>LDAR 147</strong> (CRN 10554) — Only 1 seat remaining of 16. Room cap is also 16. Second section is mandatory if more deposits arrive. Instructor listed as Harrison, needs reassignment to Dr. Yang.<br>
+      • <strong>LDAR 170</strong> (CRN 10192) — Instructor listed as Harrison, needs reassignment to Dr. Yang.
+    </div>
+
+    <h3 style="margin-top:16px;">Proposed Fall 2026 Master Schedule (Coordinator's Plan)</h3>
+    <div class="alert info">
+      <strong>Source: W. Chris Harrison schedule grid, pre-influx planning</strong>
+      This is the target schedule with all faculty assignments. Color-coded by instructor. <strong>LDAR 347</strong> (Perry Howard, 🆕) and <strong>LDAR 147 Sec 2</strong> (Christin Evans, 🆕) are proposed additions.
+    </div>
+
+    <table style="font-size:8pt; text-align:center; table-layout:fixed;">
+      <thead>
+        <tr>
+          <th style="width:70px;">Time</th>
+          <th colspan="4" style="background:#003366;color:white;">Monday / Wednesday / Friday</th>
+          <th colspan="5" style="background:#8B6F00;color:white;">Tuesday / Thursday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height:60px;">
+          <td><strong>9:00–<br>11:50</strong></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 447<br><small>Collaborative Studio</small><br><em>Jeff Kuehner</em><br>CARVE 205</td>
+          <td style="background:#117a65;color:white;font-weight:700;padding:4px;border:3px solid #00ff00;">LDAR 347 🆕<br><small>Landform Studio</small><br><em>Perry Howard</em><br>CARVE TBD</td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 247<br><small>Social Systems</small><br><em>Dallas Bretzman</em><br>CARVE 122</td>
+          <td style="background:#f5f5f5;color:#999;font-style:italic;">CARVE 203<br>available</td>
+          <td colspan="5" style="background:#f5f5f5;color:#999;"><em>No TR studios in this block</em></td>
+        </tr>
+        <tr style="height:50px;">
+          <td><strong>9:30–<br>10:45</strong></td>
+          <td colspan="4" style="background:#f5f5f5;color:#999;"><em>Studios continue above</em></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 455<br><small>Current Issues</small><br><em>Kuehner</em></td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 204<br><small>Plant Materials</small><br><em>Dallas</em></td>
+          <td style="background:#888;color:white;font-weight:700;padding:4px;">LDAR 345<br><small>Site Systems</small><br><em style="color:#ffcc00;">TBD</em><br>CARVE 122</td>
+          <td style="background:#d4ac0d;color:white;font-weight:700;padding:4px;">LDAR 103<br><small>LA Discovery</small><br><em>Anna</em></td>
+          <td rowspan="1" style="background:#f5f5f5;"></td>
+        </tr>
+        <tr style="height:55px;">
+          <td><strong>10:00–<br>11:50</strong></td>
+          <td style="background:#f5f5f5;color:#999;"><em>Studios<br>continue</em></td>
+          <td style="background:#c0392b;color:white;font-weight:700;padding:4px;">LDAR 147<br>Sec 1<br><em>Dr. Yang</em><br>CARVE 211</td>
+          <td style="background:#ca6f1e;color:white;font-weight:700;padding:4px;border:3px dashed #ffff00;">LDAR 147<br>Sec 2 🆕<br><em>Christin</em><br>TBD</td>
+          <td style="background:#2e86c1;color:white;font-weight:700;padding:4px;border:3px dashed #ffff00;">LDAR 147<br>Sec 3 🆕<br><em>Chris H.</em><br>TBD</td>
+          <td colspan="5" style="background:#f5f5f5;color:#999;"><em>No TR courses in this block</em></td>
+        </tr>
+        <tr style="height:55px;">
+          <td><strong>11:00–<br>12:15</strong></td>
+          <td colspan="4" style="background:#f5f5f5;color:#999;"><em>MWF block open</em></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 440<br><small>Proposals</small><br><em>Kuehner</em><br>CARVE 203</td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 400<br><small>181 Gap</small><br><em>Dallas</em></td>
+          <td style="background:#c0392b;color:white;font-weight:700;padding:4px;">LDAR 170<br>Sec 1<br><em>Dr. Yang</em></td>
+          <td style="background:#ca6f1e;color:white;font-weight:700;padding:4px;border:3px dashed #ffff00;">LDAR 170<br>Sec 2 🆕<br><em>Christin</em></td>
+          <td style="background:#2e86c1;color:white;font-weight:700;padding:4px;border:3px dashed #ffff00;">LDAR 170<br>Sec 3 🆕<br><em>Chris H.</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert info" style="margin-top:10px;">
+      <strong>🎓 Freshman Instructor Team — 15:1 Ratio Strategy</strong><br>
+      <strong>3 sections of LDAR 147</strong> (Design Foundations, MWF 10–11:50) + <strong>3 sections of LDAR 170</strong> (Graphics I, TR 11–12:15)<br>
+      Each instructor takes 1 section of each = max <strong>45 freshmen</strong> at 15:1 ratio<br><br>
+      • <strong>Dr. Jun Yang</strong> — LDAR 147 Sec 1 + LDAR 170 Sec 1<br>
+      • <strong>Christin Evans</strong> — LDAR 147 Sec 2 + LDAR 170 Sec 2<br>
+      • <strong>W. Chris Harrison</strong> — LDAR 147 Sec 3 + LDAR 170 Sec 3 + <strong>LDAR 400 Internship</strong> (remote reporting, upper-level gap coverage — over credit hours accepted)
+    </div>
+
+    <!-- Spring 2027 -->
+    <h3 style="margin-top:20px;">Spring 2027 — New Curriculum Schedule (Coordinator's Plan)</h3>
+    <div class="alert info">
+      <strong>New curriculum course numbers take effect Spring 2027.</strong>
+      Shows the full-year faculty loading and new even-numbered course sequence (148, 248, 348, 448). Note: Christin teaches freshman courses (LDAR 104, LDAR 400 Con. Docs gap) — consistent with freshman-only scope.
+    </div>
+
+    <table style="font-size:8pt; text-align:center; table-layout:fixed;">
+      <thead>
+        <tr>
+          <th style="width:70px;">Time</th>
+          <th colspan="3" style="background:#003366;color:white;">Monday / Wednesday / Friday</th>
+          <th colspan="5" style="background:#8B6F00;color:white;">Tuesday / Thursday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="height:60px;">
+          <td><strong>9:00–<br>11:50</strong></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 448<br><small>Capstone Project</small><br><em>Jeff Kuehner</em></td>
+          <td style="background:#888;color:white;font-weight:700;padding:4px;">LDAR 348<br><small>Master Plan Studio</small><br><em style="color:#ffcc00;">TBD</em></td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 248<br><small>Ecological Systems</small><br><em>Dallas Bretzman</em></td>
+          <td colspan="5" style="background:#f5f5f5;color:#999;"><em>No TR studios in this block</em></td>
+        </tr>
+        <tr style="height:50px;">
+          <td><strong>9:30–<br>10:45</strong></td>
+          <td colspan="3" style="background:#f5f5f5;color:#999;"><em>Studios continue above</em></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 249<br><small>Con. Documents</small><br><em>Jeff</em></td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 244<br><small>Design w/ Plants</small><br><em>Dallas</em></td>
+          <td style="background:#888;color:white;font-weight:700;padding:4px;">LDAR 349<br><small>GIS Applications</small><br><em style="color:#ffcc00;">TBD</em></td>
+          <td style="background:#ca6f1e;color:white;font-weight:700;padding:4px;">LDAR 104<br><small>LA History</small><br><em>Christin</em></td>
+          <td style="background:#f5f5f5;color:#999;"></td>
+        </tr>
+        <tr style="height:55px;">
+          <td><strong>10:00–<br>11:50</strong></td>
+          <td style="background:#f5f5f5;color:#999;"><em>Studios<br>continue</em></td>
+          <td style="background:#c0392b;color:white;font-weight:700;padding:4px;">LDAR 148<br>Sec 1<br><em>Dr. Yang</em></td>
+          <td style="background:#ca6f1e;color:white;font-weight:700;padding:4px;">LDAR 148<br>Sec 2<br><em>Christin</em></td>
+          <td style="background:#2e86c1;color:white;font-weight:700;padding:4px;">LDAR 148<br>Sec 3<br><em>Chris H.</em></td>
+          <td colspan="4" style="background:#f5f5f5;color:#999;"><em>No TR courses in this block</em></td>
+        </tr>
+        <tr style="height:55px;">
+          <td><strong>11:00–<br>12:15</strong></td>
+          <td colspan="3" style="background:#f5f5f5;color:#999;"><em>MWF block open</em></td>
+          <td style="background:#1a5276;color:white;font-weight:700;padding:4px;">LDAR 442<br><small>Design in Practice</small><br><em>Jeff</em></td>
+          <td style="background:#6c3483;color:white;font-weight:700;padding:4px;">LDAR 181<br><small>Materials & Con.</small><br><em>Dallas</em></td>
+          <td style="background:#c0392b;color:white;font-weight:700;padding:4px;">LDAR 171<br>Sec 1<br><em>Dr. Yang</em></td>
+          <td style="background:#ca6f1e;color:white;font-weight:700;padding:4px;">LDAR 171<br>Sec 2<br><em>Christin</em></td>
+          <td style="background:#2e86c1;color:white;font-weight:700;padding:4px;">LDAR 171<br>Sec 3<br><em>Chris H.</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert info" style="margin-top:10px;">
+      <strong>New Curriculum Course Key (Spring 2027)</strong><br>
+      <strong>Freshman:</strong> LDAR 104 (History), LDAR 148 (Fundamentals), LDAR 171 (Graphics II)<br>
+      <strong>Sophomore:</strong> LDAR 244 (Design w/ Plants), LDAR 248 (Ecological Systems Studio), LDAR 249 (Construction Docs)<br>
+      <strong>Junior:</strong> LDAR 348 (Master Plan Studio), LDAR 349 (GIS Applications)<br>
+      <strong>Senior:</strong> LDAR 442 (Design in Practice), LDAR 448 (Capstone Project Studio)<br>
+      <strong>Support:</strong> LDAR 181 (Materials & Construction), LDAR 255 (Design Theory), LDAR 400 (Con. Docs Gap)
+    </div>
+  </div>
+
+  <!-- ═══════════════ 4. TENURE STANDARDS ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">4</span>
+      Dr. Aryal's Proposed Tenure Standards — Feedback Discussion
+    </div>
+
+    <h3>Appendix G: Discipline-Specific Standards for Landscape Architecture</h3>
+
+    <table>
+      <thead>
+        <tr><th>Tier</th><th>Equivalent To</th><th>Examples</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Tier 1</strong> (Refereed/Juried)</td><td>Peer-reviewed journal articles</td><td>Juried competitions, peer-reviewed exhibitions, built landscapes, published design studies</td></tr>
+        <tr><td><strong>Tier 2</strong> (Non-Refereed)</td><td>Conference papers, reports</td><td>Invited exhibitions, community design projects, technical reports, feasibility studies</td></tr>
+        <tr><td><strong>Tier 3</strong> (Supporting)</td><td>Working papers, presentations</td><td>Pedagogical innovations, unjuried shows, local projects, portfolio documentation</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Quantitative Benchmarks (5-Year Cycle)</h3>
+    <table>
+      <thead>
+        <tr><th>Target Rank</th><th>Tier 1</th><th>Tier 2</th><th>Total</th><th>Grant Proposals</th><th>Funded</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Asst → Associate (Tenure)</td><td>3</td><td>4</td><td>7</td><td>5</td><td>2</td></tr>
+        <tr><td>Associate → Full</td><td>5</td><td>5</td><td>10</td><td>7</td><td>3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Recommended Feedback Points</h3>
+    <ul class="action-list">
+      <li><span class="priority p2">support</span> Appendix G approach — embeds LA criteria in CAES framework officially</li>
+      <li><span class="priority p2">support</span> 3-Tier system — add explicit NC A&T examples (CELA papers, community charrettes, digital tools)</li>
+      <li><span class="priority p1">discuss</span> Grant benchmarks — 5 proposals / 2 funded may be aggressive given 1 post-award specialist for entire College. Consider 3 proposals / 1 funded as minimum</li>
+      <li><span class="priority p2">support</span> Design equivalency credits — major built work = 2 Tier 1 outputs (industry standard)</li>
+      <li><span class="priority p1">add</span> Digital scholarship category — AI tools, interactive platforms, digital twins as Tier 1 when externally evaluated</li>
+      <li><span class="priority p1">add</span> External reviewer requirement — at least 1 reviewer from LAAB-accredited program for all LA tenure cases</li>
+      <li><span class="priority p2">add</span> Explicit LAAB alignment language — reference accreditation standards directly</li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ 5. ACCREDITATION ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">5</span>
+      Accreditation & Resource Needs
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>LAAB Requirements</h3>
+        <table>
+          <tr><td>Instructional FTEs</td><td style="color:var(--green);font-weight:600;">5.0 ✅ (minimum 5)</td></tr>
+          <tr><td>Studio Ratio</td><td>15:1 or better</td></tr>
+          <tr><td>Workload</td><td>3 courses (9 cr) / semester</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Resource Needs</h3>
+        <table>
+          <tr><td>Studio space expansion</td><td style="color:var(--red);">Critical</td></tr>
+          <tr><td>Software licenses (Civil 3D, Land F/X, Adobe CC)</td><td style="color:var(--amber);">Needed</td></tr>
+          <tr><td>Scholarship funding (currently $26,530/yr)</td><td style="color:var(--amber);"><strong>Dept. Head</strong> — explore grants (USDA, LAF, ASLA) to supplement</td></tr>
+          <tr><td>Post-award grant specialist</td><td style="color:var(--amber);">Shared (1 for College)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h3>Proposed Space Expansion Solutions</h3>
+    <div class="alert success">
+      <strong>🏗 CARVE 213 — Convert Presentation Room to Studio</strong>
+      Repurpose CARVE 213 (currently a presentation/review room) as an additional studio space. This immediately adds capacity for a freshman or sophomore section without requiring new construction. Room would need drafting tables, power strips, and network drops.
+    </div>
+    <div class="alert info">
+      <strong>🚗 C.H. Moore Building — Relocate Seniors</strong>
+      Move senior cohort (LDAR 447/448 Collaborative/Capstone Studio) to C.H. Moore. Benefits: better parking access, proximity to farm equipment and site resources, larger floor plates. <strong>Only requirement:</strong> update existing computers with necessary software (Civil 3D, Adobe CC, Land F/X, SketchUp). This frees CARVE 205 (40 seats) for lower-level studios.
+    </div>
+  </div>
+
+  <!-- ═══════════════ 6. ACTION ITEMS ═══════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">6</span>
+      Action Items
+    </div>
+
+    <h3>🔴 This Week (Critical)</h3>
+    <ul class="action-list">
+      <li><span class="priority p0">P0</span> Contact 28 un-deposited LA admits — personal calls/emails to high-GPA prospects <span class="owner">James Davis</span></li>
+      <li><span class="priority p0">P0</span> Get Browning & Goldsmith-Powell registered for classes (deposited, not registered) <span class="owner">James Davis</span></li>
+      <li><span class="priority p0">P0</span> LDAR 147 — open 3 sections (Yang, Christin, Harrison) for 15:1 ratio <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p0">P0</span> LDAR 170 — open 3 sections (Yang, Christin, Harrison) for 15:1 ratio <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p0">P0</span> Cancel LDAR 380 (CRN 10768) — not in new curriculum <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p0">P0</span> Hire Perry Howard as adjunct for LDAR 347 Landform Studio <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p0">P0</span> Assign Dr. Yang to LDAR 147 & 170 in Banner <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p0">P0</span> Dr. Yang computer & office setup <span class="owner">James Davis → Mr. Brown</span></li>
+    </ul>
+
+    <h3>🟡 Next 2 Weeks</h3>
+    <ul class="action-list">
+      <li><span class="priority p1">P1</span> Verify room assignments for incoming students <span class="owner">Harrison</span></li>
+      <li><span class="priority p1">P1</span> Studio space plan — physical accommodation for confirmed students <span class="owner">Harrison</span></li>
+      <li><span class="priority p1">P1</span> Create LDAR 400 sections in Banner for Fall and Spring <span class="owner">Dr. Aryal</span></li>
+      <li><span class="priority p1">P1</span> Finalize and submit Appendix G tenure standards feedback <span class="owner">Harrison</span></li>
+      <li><span class="priority p1">P1</span> Begin recruitment strategy documentation for 2027 cohort <span class="owner">James Davis</span></li>
+    </ul>
+
+    <h3>🟠 Strategic (Summer–Fall 2026)</h3>
+    <ul class="action-list">
+      <li><span class="priority p2">P2</span> LAAB accreditation documentation — verify 5 FTE with new hire + adjuncts <span class="owner">Harrison</span></li>
+      <li><span class="priority p2">P2</span> Identify grant solicitations for LA program technology <span class="owner">Harrison</span></li>
+      <li><span class="priority p2">P2</span> Align program growth with Preeminence 2030 Blueprint (Goal 1) <span class="owner">Harrison / Dr. Aryal</span></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="report-footer" style="border-top:3px solid var(--aggie-blue);">
+    <span style="font-weight:600; color:var(--aggie-blue);">NC A&T State University • Program of Landscape Architecture • NRED / CAES</span>
+    <span>Confidential — For Internal Use Only • June 29, 2026</span>
+  </footer>
+  <div style="background:var(--aggie-gold); height:6px; margin-top:4px;"></div>
+
+</body>
+</html>

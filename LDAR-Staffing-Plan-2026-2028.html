@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LDAR Faculty Staffing Plan 2026–2028 | NC A&T State University</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  
+  :root {
+    --aggie-blue: #003366;
+    --aggie-gold: #C5960C;
+    --aggie-gold-light: #F5E6B8;
+    --dark: #1a1a2e;
+    --text: #2d2d44;
+    --text-light: #666680;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fc;
+    --border: #e2e4ea;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: letter;
+    margin: 0.6in 0.6in 0.8in 0.6in;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    font-size: 10.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Cover / Header */
+  .report-header {
+    background: linear-gradient(135deg, var(--aggie-blue), #001a33);
+    color: white;
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .report-header::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 220px; height: 100%;
+    background: linear-gradient(135deg, transparent 50%, rgba(197,150,12,0.12) 50%);
+  }
+
+  .report-header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header .subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header .meta {
+    display: flex;
+    gap: 24px;
+    font-size: 10px;
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gold-bar {
+    width: 60px;
+    height: 3px;
+    background: var(--aggie-gold);
+    margin: 8px 0 12px;
+    border-radius: 2px;
+  }
+
+  .content { padding: 24px 32px; }
+
+  /* Section Headers */
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--aggie-blue);
+    margin: 28px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--aggie-gold);
+    page-break-after: avoid;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 18px 0 8px;
+    page-break-after: avoid;
+  }
+
+  h3 .focus {
+    font-weight: 400;
+    color: var(--text-light);
+    font-size: 10px;
+    margin-left: 6px;
+  }
+
+  p { margin-bottom: 8px; font-size: 10.5px; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+    font-size: 9.5px;
+    page-break-inside: avoid;
+  }
+
+  thead th {
+    background: var(--aggie-blue);
+    color: white;
+    padding: 6px 7px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  tbody td {
+    padding: 5px 7px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) { background: var(--bg-alt); }
+
+  .credits-cell {
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .role-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .role-coordinator { background: #fef3c7; color: #92400e; }
+  .role-senior { background: #dbeafe; color: #1e40af; }
+  .role-junior { background: #d1fae5; color: #065f46; }
+  .role-freshman { background: #ede9fe; color: #5b21b6; }
+  .role-adjunct { background: #f3f4f6; color: #374151; }
+
+  .course-list { list-style: none; padding: 0; }
+  .course-list li { margin-bottom: 1px; }
+  .course-num { font-weight: 600; color: var(--aggie-blue); }
+
+  /* Summary boxes */
+  .semester-summary {
+    display: flex;
+    gap: 10px;
+    margin: 6px 0 14px;
+    flex-wrap: wrap;
+  }
+
+  .summary-box {
+    flex: 1;
+    min-width: 90px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-align: center;
+  }
+
+  .summary-box .num {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--aggie-blue);
+  }
+
+  .summary-box .label {
+    font-size: 8px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* Alert boxes */
+  .alert {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 10px;
+    border-left: 3px solid;
+  }
+
+  .alert-warning { background: #fffbeb; border-color: var(--warning); }
+  .alert-danger { background: #fef2f2; border-color: var(--danger); }
+  .alert-info { background: #eff6ff; border-color: var(--info); }
+  .alert-success { background: #f0fdf4; border-color: var(--success); }
+  .alert strong { font-weight: 700; }
+
+  /* Course catalog */
+  .course-catalog {
+    columns: 2;
+    column-gap: 20px;
+    font-size: 9.5px;
+  }
+
+  .course-entry {
+    break-inside: avoid;
+    margin-bottom: 3px;
+    padding: 2px 0;
+  }
+
+  .course-code {
+    font-weight: 700;
+    color: var(--aggie-blue);
+  }
+
+  /* Page breaks */
+  .page-break { page-break-before: always; }
+
+  /* Footer */
+  .report-footer {
+    margin-top: 20px;
+    padding: 10px 32px;
+    border-top: 1px solid var(--border);
+    font-size: 8.5px;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 5px 0;
+    font-size: 10px;
+  }
+
+  .action-item .status {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: white;
+    margin-top: 2px;
+  }
+
+  .status-urgent { background: var(--danger); }
+  .status-pending { background: var(--warning); }
+  .status-done { background: var(--success); }
+  .status-question { background: var(--info); }
+
+  .strategy-box {
+    background: linear-gradient(135deg, #f0f4ff, #fefce8);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+  }
+
+  .strategy-box h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--aggie-blue);
+    margin-bottom: 6px;
+  }
+
+  .strategy-box p {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .report-header { margin: 0; }
+    .content { padding: 20px 0; }
+    .report-footer { padding: 10px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="report-header">
+  <h1>LDAR Faculty Staffing Plan</h1>
+  <div class="gold-bar"></div>
+  <div class="subtitle">Strategic Positioning & Operational Transition — Fall 2026 through Spring 2028</div>
+  <div class="meta">
+    <span>NC A&T State University · CAES · NRED Department</span>
+    <span>Prepared by W. Chris Harrison</span>
+    <span>July 13, 2026</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ═══════════ EXECUTIVE SUMMARY ═══════════ -->
+<h2>1. Executive Summary</h2>
+
+<p>This document outlines the 2-year faculty staffing transition for the Landscape Architecture (LDAR) program at North Carolina A&T State University. The plan supports the strategic pivot from a "Generalist" model to the <strong>"NCAT LandArch Way" — a High-Tech, High-Touch specialist model</strong> designed to secure LAAB accreditation and distinguish NC A&T from regional competitors.</p>
+
+<div class="strategy-box">
+  <h4>Operational Phasing</h4>
+  <p><strong>Phase 1 — Transition (2026–2027):</strong> Utilizes three adjuncts (Christin, Anna, Preston) to manage "Gap" courses created by curriculum restructuring.</p>
+  <p><strong>Phase 2 — Steady State (2027–2028):</strong> Consolidates to two adjuncts (Christin, Preston) to optimize budget while maintaining the 5.0 FTE required for LAAB accreditation.</p>
+</div>
+
+<div class="semester-summary">
+  <div class="summary-box"><div class="num">4</div><div class="label">Full-Time Faculty</div></div>
+  <div class="summary-box"><div class="num">3→2</div><div class="label">Adjuncts (Ph1→Ph2)</div></div>
+  <div class="summary-box"><div class="num">5.0</div><div class="label">Target FTE</div></div>
+  <div class="summary-box"><div class="num">14</div><div class="label">Unique Courses</div></div>
+</div>
+
+<!-- ═══════════ FACULTY ROSTER ═══════════ -->
+<h2>2. Faculty Roster & Workload Compliance</h2>
+
+<table>
+  <thead>
+    <tr><th>Faculty</th><th>Appointment</th><th>Max Before Overload</th><th>Load</th><th>Role & Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>W. Chris Harrison</strong></td><td>Tenure-Track</td><td>9 cr</td><td><strong>9 cr</strong></td><td>Senior Lead — all senior-level instruction; no junior classes</td></tr>
+    <tr><td><strong>Dallas Bretzman</strong></td><td>Lecturer + Coordinator</td><td>12 cr</td><td><strong>9 + 3 admin</strong></td><td>Coordinator — sophomore anchor; 3-cr administrative release</td></tr>
+    <tr><td><strong>Jeff Kuehner</strong></td><td>Lecturer</td><td>12 cr</td><td><strong>12 cr</strong></td><td>Junior/Tech Lead — technical core and junior grading sequence</td></tr>
+    <tr><td><strong>Dr. Jun Yang</strong></td><td>Tenure-Track (New)</td><td>9 cr</td><td><strong>6 cr</strong></td><td>Freshman Lead — AI specialty; research release (Year 1 cap)</td></tr>
+    <tr><td><strong>Christin Evans</strong></td><td>Adjunct</td><td>6 cr</td><td>3–6 cr</td><td>Gap coverage — materials, con docs, junior studio (varies by semester)</td></tr>
+    <tr><td><strong>Anna Reaves</strong></td><td>Adjunct</td><td>6 cr</td><td>3 cr</td><td>Recruitment — Discovery course (Phase 1 only; rotated off Phase 2)</td></tr>
+    <tr><td><strong>Preston Montague</strong></td><td>Adjunct</td><td>6 cr</td><td>1–3 cr</td><td>Professional prep — portfolio seminar / design theory</td></tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info">
+  <strong>Policy Reference:</strong> Tenure-track faculty teaching >9 credit hours = overload (requires dean + Provost approval). Teaching faculty (lecturers) teaching >12 credit hours = overload. Program coordination counts as "Directed Professional Activity" per UNC System policy.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PHASE 1 -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>3. Phase 1: Transition Year (2026–2027)</h2>
+
+<h3>Fall 2026 <span class="focus">— Sophomore "Materials" Gap & Internship Financial Protection</span></h3>
+
+<table>
+  <thead>
+    <tr><th>Instructor</th><th>Role</th><th>Course Assignments</th><th style="text-align:center">Cr</th><th>Strategic Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Chris</strong></td>
+      <td><span class="role-badge role-senior">Senior Lead</span></td>
+      <td><span class="course-num">LDAR 447</span> Collaborative Studio (6)<br><span class="course-num">LDAR 440</span> Proposal Writing (3)</td>
+      <td class="credits-cell">9</td>
+      <td>Design-to-Practice: Shepherds Seniors through capstone prep</td>
+    </tr>
+    <tr>
+      <td><strong>Dallas</strong></td>
+      <td><span class="role-badge role-coordinator">Coordinator</span></td>
+      <td><span class="course-num">LDAR 247</span> Social Systems Studio (6)<br><span class="course-num">LDAR 204</span> Plant Materials (3)</td>
+      <td class="credits-cell">9+3</td>
+      <td>Coordinator Anchor: Sophomore instruction + 3-cr admin release</td>
+    </tr>
+    <tr>
+      <td><strong>Jeff</strong></td>
+      <td><span class="role-badge role-junior">Junior Lead</span></td>
+      <td><span class="course-num">LDAR 347</span> Landform & Stormwater (6)<br><span class="course-num">LDAR 345</span> Site Systems (3)<br><span class="course-num">LDAR 400</span> Gap Materials / Sec 001 (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Technical Core: Junior grading sequence + soph materials gap</td>
+    </tr>
+    <tr>
+      <td><strong>Dr. Yang</strong></td>
+      <td><span class="role-badge role-freshman">Freshman Lead</span></td>
+      <td><span class="course-num">LDAR 147</span> Design Foundations (3)<br><span class="course-num">LDAR 170</span> Graphics I (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Tenure Protection: Load capped to preserve research time</td>
+    </tr>
+    <tr>
+      <td><strong>Christin</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 455</span> Current Issues (3)<br><span class="course-num">LDAR 400</span> Internship / Ind. Study (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Senior support: Seminar + internship supervision</td>
+    </tr>
+    <tr>
+      <td><strong>Anna</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 103</span> LA Discovery (3)</td>
+      <td class="credits-cell">3</td>
+      <td>Recruitment: Delivers introductory Discovery lecture</td>
+    </tr>
+    <tr>
+      <td><strong>Preston</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 399</span> Portfolio Seminar (1)</td>
+      <td class="credits-cell">1</td>
+      <td>Professional Prep: Junior portfolio formatting</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="semester-summary">
+  <div class="summary-box"><div class="num">49</div><div class="label">Total Credits</div></div>
+  <div class="summary-box"><div class="num">7</div><div class="label">Faculty (4 FT + 3 Adj)</div></div>
+  <div class="summary-box"><div class="num">10 cr</div><div class="label">Adjunct Pool</div></div>
+  <div class="summary-box"><div class="num">~5.3</div><div class="label">FTE</div></div>
+</div>
+
+<!-- SPRING 2027 -->
+<div class="page-break"></div>
+
+<h3>Spring 2027 <span class="focus">— Junior "Con Docs" Gap & Capacity Constraints</span></h3>
+
+<table>
+  <thead>
+    <tr><th>Instructor</th><th>Role</th><th>Course Assignments</th><th style="text-align:center">Cr</th><th>Strategic Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Chris</strong></td>
+      <td><span class="role-badge role-senior">Coordinator</span></td>
+      <td><span class="course-num">LDAR 348</span> Master Planning Studio (3)<br><span class="course-num">LDAR 349</span> GIS Applications (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Tech Integration: Junior studio linked with GIS</td>
+    </tr>
+    <tr>
+      <td><strong>Dallas</strong></td>
+      <td><span class="role-badge role-coordinator">Soph Lead</span></td>
+      <td><span class="course-num">LDAR 248</span> Sophomore Studio (6)<br><span class="course-num">LDAR 244</span> Designing with Plants (3)<br><span class="course-num">LDAR 181</span> Materials (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Freshman Flow: Materials moved from Fall to Spring</td>
+    </tr>
+    <tr>
+      <td><strong>Jeff</strong></td>
+      <td><span class="role-badge role-junior">Senior Lead</span></td>
+      <td><span class="course-num">LDAR 448</span> Capstone Studio (6)<br><span class="course-num">LDAR 249</span> Con Docs (3)<br><span class="course-num">LDAR 442</span> Design in Practice (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Practice Lead: Con Docs Section 001 for Sophomores</td>
+    </tr>
+    <tr>
+      <td><strong>Dr. Yang</strong></td>
+      <td><span class="role-badge role-freshman">Freshman Lead</span></td>
+      <td><span class="course-num">LDAR 148</span> Freshman Studio (3)<br><span class="course-num">LDAR 171</span> Graphics II (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Research Release: Load capped at 6 credits</td>
+    </tr>
+    <tr>
+      <td><strong>Christin</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 104</span> LA History (3)<br><span class="course-num">LDAR 400</span> Gap Con Docs / Sec 002 (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Gap Solution: "Gap Con Docs" for Juniors who missed sequence</td>
+    </tr>
+    <tr>
+      <td><strong>Preston</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 255</span> Design Theory (3)</td>
+      <td class="credits-cell">3</td>
+      <td>Theory Lead: Sophomore design theory</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="semester-summary">
+  <div class="summary-box"><div class="num">45</div><div class="label">Total Credits</div></div>
+  <div class="summary-box"><div class="num">6</div><div class="label">Faculty (4 FT + 2 Adj)</div></div>
+  <div class="summary-box"><div class="num">9 cr</div><div class="label">Adjunct Pool</div></div>
+  <div class="summary-box"><div class="num">~5.0</div><div class="label">FTE</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PHASE 2 -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>4. Phase 2: Steady State (2027–2028)</h2>
+
+<h3>Fall 2027 <span class="focus">— Operational Efficiency · Anna Rotated Off</span></h3>
+
+<table>
+  <thead>
+    <tr><th>Instructor</th><th>Role</th><th>Course Assignments</th><th style="text-align:center">Cr</th><th>Strategic Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Chris</strong></td>
+      <td><span class="role-badge role-senior">Coordinator</span></td>
+      <td><span class="course-num">LDAR 345</span> Site Systems (3)<br><span class="course-num">LDAR 400</span> Internship (3)</td>
+      <td class="credits-cell">6</td>
+      <td>50% admin release maintained</td>
+    </tr>
+    <tr>
+      <td><strong>Dallas</strong></td>
+      <td><span class="role-badge role-coordinator">Soph Lead</span></td>
+      <td><span class="course-num">LDAR 247</span> Soph Studio (6)<br><span class="course-num">LDAR 204</span> Plants (3)<br><span class="course-num">LDAR 103</span> Discovery (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Recruitment: Dallas takes over Discovery</td>
+    </tr>
+    <tr>
+      <td><strong>Jeff</strong></td>
+      <td><span class="role-badge role-junior">Senior Lead</span></td>
+      <td><span class="course-num">LDAR 447</span> Senior Studio (6)<br><span class="course-num">LDAR 440</span> Proposal (3)<br><span class="course-num">LDAR 455</span> Current Issues (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Leads entire Senior cohort</td>
+    </tr>
+    <tr>
+      <td><strong>Dr. Yang</strong></td>
+      <td><span class="role-badge role-freshman">Freshman Lead</span></td>
+      <td><span class="course-num">LDAR 147</span> Freshman Studio (3)<br><span class="course-num">LDAR 170</span> Graphics I (3)</td>
+      <td class="credits-cell">6</td>
+      <td>Protected time for tenure</td>
+    </tr>
+    <tr>
+      <td><strong>Christin</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 347</span> Landform Studio (6)</td>
+      <td class="credits-cell">6</td>
+      <td>0.5 FTE: Covers Junior Studio</td>
+    </tr>
+    <tr>
+      <td><strong>Preston</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 399</span> Portfolio (1)</td>
+      <td class="credits-cell">1</td>
+      <td>Portfolio seminar</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="semester-summary">
+  <div class="summary-box"><div class="num">43</div><div class="label">Total Credits</div></div>
+  <div class="summary-box"><div class="num">6</div><div class="label">Faculty (4 FT + 2 Adj)</div></div>
+  <div class="summary-box"><div class="num">5.0</div><div class="label">FTE ✓</div></div>
+</div>
+
+<!-- SPRING 2028 -->
+<h3>Spring 2028 <span class="focus">— FTE Watch: 4.5 FTE Risk</span></h3>
+
+<table>
+  <thead>
+    <tr><th>Instructor</th><th>Role</th><th>Course Assignments</th><th style="text-align:center">Cr</th><th>Strategic Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Chris</strong></td>
+      <td><span class="role-badge role-senior">Coordinator</span></td>
+      <td><span class="course-num">LDAR 348</span> Master Planning (3) — co-teach<br><span class="course-num">LDAR 349</span> GIS Applications (3)</td>
+      <td class="credits-cell">6</td>
+      <td>GIS integrated with Master Planning</td>
+    </tr>
+    <tr>
+      <td><strong>Dallas</strong></td>
+      <td><span class="role-badge role-coordinator">Soph Lead</span></td>
+      <td><span class="course-num">LDAR 248</span> Soph Studio (6)<br><span class="course-num">LDAR 244</span> Plants (3)<br><span class="course-num">LDAR 181</span> Materials (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Core ecological systems + materials</td>
+    </tr>
+    <tr>
+      <td><strong>Jeff</strong></td>
+      <td><span class="role-badge role-junior">Senior Lead</span></td>
+      <td><span class="course-num">LDAR 448</span> Capstone (6)<br><span class="course-num">LDAR 249</span> Con Docs (3)<br><span class="course-num">LDAR 442</span> Practice (3)</td>
+      <td class="credits-cell">12</td>
+      <td>Takes Design in Practice</td>
+    </tr>
+    <tr>
+      <td><strong>Dr. Yang</strong></td>
+      <td><span class="role-badge role-freshman">Freshman Lead</span></td>
+      <td><span class="course-num">LDAR 148</span> Freshman Studio (3)<br><span class="course-num">LDAR 171</span> Graphics II (3)<br><span class="course-num">LDAR 104</span> History (3)</td>
+      <td class="credits-cell">9</td>
+      <td>Load increase: Takes History in Year 2</td>
+    </tr>
+    <tr>
+      <td><strong>Christin</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 348</span> Master Planning (3) — co-teach</td>
+      <td class="credits-cell">3</td>
+      <td>FTE aggregation support role</td>
+    </tr>
+    <tr>
+      <td><strong>Preston</strong></td>
+      <td><span class="role-badge role-adjunct">Adjunct</span></td>
+      <td><span class="course-num">LDAR 255</span> Design Theory (3)</td>
+      <td class="credits-cell">3</td>
+      <td>Design Theory</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning">
+  <strong>⚠️ FTE Risk:</strong> Spring 2028 drops to ~4.5 FTE. <strong>Mitigation:</strong> Structure Christin's contract as an Academic Year appointment (0.5 FTE) based on Fall teaching load of 6 credits, allowing aggregated time to count toward 5.0 FTE requirement.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- GAP STRATEGY -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page-break"></div>
+
+<h2>5. Strategic Gap Management (LDAR 400)</h2>
+
+<p>To manage the curriculum transition without triggering Banner "Repeat Course" errors, the plan utilizes <strong>LDAR 400 (Special Problems)</strong> as an administrative bridge course with distinct sections:</p>
+
+<table>
+  <thead>
+    <tr><th>Section</th><th>Purpose</th><th>Semester</th><th>Instructor</th><th>Students</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Sec 001</strong></td><td>Materials Gap — covers LDAR 181 content</td><td>Fall 2026</td><td>Jeff</td><td>Sophomores</td></tr>
+    <tr><td><strong>Sec 002</strong></td><td>Con Docs Gap — covers LDAR 249 content</td><td>Spring 2027</td><td>Christin</td><td>Juniors</td></tr>
+    <tr><td><strong>Internship</strong></td><td>Internship Analysis — moved to Fall for block tuition</td><td>Fall 2026+</td><td>Christin/Chris</td><td>Seniors</td></tr>
+  </tbody>
+</table>
+
+<div class="alert alert-success">
+  <strong>✅ Financial Protection:</strong> Moving Internship credit registration to Fall allows students to utilize block tuition at $0 marginal cost, rather than paying per-credit in summer.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CURRICULUM STATUS -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>6. Curriculum & UAPCC Status</h2>
+
+<h3>Existing Course Updates (Filed 4/13/2025)</h3>
+<p>Description and learning objective updates for existing LDAR courses based on LAAB re-accreditation visit feedback. Filed by W. Chris Harrison. No course number or credit hour changes — descriptions only. <strong>Status: In progress, expected completion 2026.</strong></p>
+
+<h3>New Course Numbers Required</h3>
+<table>
+  <thead>
+    <tr><th>Course</th><th>Title</th><th>Cr</th><th>First Needed</th><th>UAPCC Status</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="course-num">LDAR 181</span></td><td>Site Materials</td><td>3</td><td>Spring 2027</td><td>Pushing through</td></tr>
+    <tr><td><span class="course-num">LDAR 249</span></td><td>Construction Documents</td><td>3</td><td>Spring 2027</td><td>Pushing through</td></tr>
+    <tr><td><span class="course-num">LDAR 349</span></td><td>GIS Applications</td><td>3</td><td>Spring 2027</td><td>Pushing through</td></tr>
+    <tr><td><span class="course-num">LDAR 399</span></td><td>Portfolio Seminar</td><td>1</td><td>Fall 2026</td><td>Pushing through</td></tr>
+    <tr><td><span class="course-num">LDAR 442</span></td><td>Design in Practice</td><td>3</td><td>Spring 2027</td><td>Pushing through</td></tr>
+  </tbody>
+</table>
+
+
+
+</div><!-- .content -->
+
+<!-- FOOTER -->
+<div class="report-footer">
+  <span>NC A&T State University · College of Agriculture & Environmental Sciences · Landscape Architecture Program</span>
+  <span>CONFIDENTIAL — For Administrative Use Only</span>
+</div>
+
+</body>
+</html>

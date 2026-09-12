@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Email Communications Suite — USDA NIFA CBG & LA Program Alignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aggie-blue: #00386b;
+            --aggie-blue-dark: #001f3f;
+            --aggie-gold: #FDB927;
+            --aggie-gold-dark: #9a6500;
+            --nrcs-green: #1b5e20;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-200: #cbd5e1;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --text-dark: #0f172a;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #cbd5e1;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 10pt;
+            padding: 24px 0 48px;
+        }
+
+        .top-action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--aggie-blue-dark);
+            color: white;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            border-bottom: 3px solid var(--aggie-gold);
+        }
+
+        .bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+        }
+
+        .bar-brand span { color: var(--aggie-gold); }
+
+        .btn-print {
+            background: var(--aggie-gold);
+            color: var(--aggie-blue-dark);
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9pt;
+            font-weight: 800;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover { background: #ffffff; color: var(--aggie-blue); }
+
+        .container {
+            max-width: 8.5in;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            padding: 0.55in;
+        }
+
+        .doc-header {
+            border-bottom: 3px solid var(--aggie-gold);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .inst-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9pt;
+            font-weight: 800;
+            color: var(--aggie-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .doc-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            font-weight: 900;
+            color: var(--aggie-blue-dark);
+            margin: 6px 0;
+        }
+
+        .doc-subtitle {
+            font-size: 10.5pt;
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+
+        .email-card {
+            border: 1.5px solid var(--slate-200);
+            border-radius: 6px;
+            margin-bottom: 32px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            page-break-inside: avoid;
+        }
+
+        .email-header {
+            background: var(--slate-900);
+            color: white;
+            padding: 14px 20px;
+            border-bottom: 2px solid var(--aggie-gold);
+        }
+
+        .email-badge {
+            display: inline-block;
+            background: var(--aggie-gold);
+            color: var(--slate-900);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 7.5pt;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .email-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12pt;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .email-fields {
+            background: var(--slate-50);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--slate-200);
+            font-size: 8.8pt;
+            line-height: 1.6;
+        }
+
+        .email-field {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            margin-bottom: 4px;
+        }
+
+        .email-field strong {
+            color: var(--aggie-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 8pt;
+        }
+
+        .email-body {
+            padding: 20px 24px;
+            font-size: 9.6pt;
+            color: var(--slate-900);
+            line-height: 1.65;
+            background: #ffffff;
+        }
+
+        .email-body p { margin-bottom: 14px; }
+        .email-body ul { margin: 10px 0 16px 22px; }
+        .email-body li { margin-bottom: 6px; font-size: 9.3pt; }
+
+        .callout-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--nrcs-green);
+            padding: 10px 14px;
+            border-radius: 0 4px 4px 0;
+            margin: 14px 0;
+            font-size: 9pt;
+            color: #14532d;
+        }
+
+        .callout-box strong { color: #052e16; }
+
+        .sig-box {
+            margin-top: 20px;
+            padding-top: 14px;
+            border-top: 1.5px solid var(--slate-200);
+            font-size: 9pt;
+            color: var(--slate-700);
+            line-height: 1.45;
+        }
+
+        .sig-name {
+            font-weight: 800;
+            color: var(--aggie-blue-dark);
+            font-size: 9.5pt;
+        }
+
+        @media print {
+            body { background: white; padding: 0; font-size: 9pt; }
+            .top-action-bar { display: none !important; }
+            .container { box-shadow: none; margin: 0; padding: 0.2in; max-width: 100%; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ACTION BAR -->
+    <div class="top-action-bar">
+        <div class="bar-brand">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>NC A&T Communications Suite</span> — Executive Proposal & Meeting Emails
+        </div>
+        <div>
+            <button class="btn-print" onclick="window.print()">Print Communications</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <header class="doc-header">
+            <div class="inst-label">North Carolina Agricultural and Technical State University</div>
+            <h1 class="doc-title">Executive Communication Dispatches (September 9, 2026)</h1>
+            <div class="doc-subtitle">Ready-to-Send Email Templates: Proposal Blueprint Distribution, Hannah Talton Invitation & LA Program Meeting</div>
+        </header>
+
+        <!-- ========================================================================= -->
+        <!-- EMAIL 0: DR. OMON ADVANCE SCIENTIFIC REVIEW -->
+        <!-- ========================================================================= -->
+        <div class="email-card">
+            <div class="email-header" style="background: #78350f;">
+                <span class="email-badge" style="background: #fde68a; color: #78350f;">Priority 1 • Senior Faculty Advance Review</span>
+                <div class="email-title">Advance Scientific Draft Review: Dr. Omoanghe S. Isikhuemhen ("Dr. Omon")</div>
+            </div>
+            <div class="email-fields">
+                <div class="email-field">
+                    <strong>To:</strong>
+                    <span>Dr. Omoanghe S. Isikhuemhen &lt;omoni@ncat.edu&gt;</span>
+                </div>
+                <div class="email-field">
+                    <strong>Subject:</strong>
+                    <span><strong>Advance Working Draft for Your Review: USDA NIFA 1890 CBG ($750K Integrated Track) — Living Landscapes & Digital Agroforestry Laboratory (LL-DAL)</strong></span>
+                </div>
+                <div class="email-field">
+                    <strong>Attached:</strong>
+                    <span><em>USDA-NIFA-CBG-Integrated-Proposal-Blueprint-2026.pdf</em> (Working Draft)</span>
+                </div>
+            </div>
+            <div class="email-body">
+                <p>Dear Dr. Omon,</p>
+
+                <p>I hope you are having a productive week. In accordance with your guidance, I am sending this executive working draft directly to you first for your review and advice before circulating it to the wider cross-college team.</p>
+
+                <p>Attached is the updated working blueprint for our upcoming USDA NIFA 1890 Capacity Building Grant (CBG) application: <strong><em>Living Landscapes & Digital Agroforestry Laboratory (LL-DAL)</em></strong> ($750,000 across 36 months on the Integrated Teaching, Research, and Extension track).</p>
+
+                <p>To ensure North Carolina A&T did not miss today's (September 9) campus deadline, I submitted our preliminary Notice of Intent (NOI) placeholder into the Division of Research (DOR) queue. As you know, the internal NOI is strictly an administrative reservation and is completely non-binding; the actual proposal narrative, research questions, and collaborative deliverables will be shaped and updated with your input.</p>
+
+                <div class="callout-box" style="background: #fefce8; border-left: 4px solid #ca8a04; color: #854d0e;">
+                    <strong style="color: #713f12;">How Your Vision, Research Questions & Laboratory Science Are Positioned:</strong>
+                    <ul style="margin: 6px 0 2px 18px;">
+                        <li><strong>The Living Fungal Forest Laboratory (Pillar 2 & Section 03):</strong> Permanent biological research infrastructure at SFRIC and university woodlots, featuring pecan truffle (<em>Tuber lyonii</em>) inoculated rootzones and medicinal fungal polycultures with a 15–20 year empirical research horizon.</li>
+                        <li><strong>Dr. Felicia Anike’s Leadership Core (Section 04 & 05):</strong> Positioned as Co-PI and Forest Bioeconomy Lead, directing mycorrhizal inoculation protocols, Carver Hall laboratory assays, and leading Paper 3 in our collaborative 5-paper suite (<em>Agroforestry Systems</em>).</li>
+                        <li><strong>Your Senior Advisory Role (Section 03 & 04):</strong> You are formally positioned as Senior Faculty Project Advisor, honoring your international standing and providing high-level scientific mentorship to Dr. Anike and our team, completely free from administrative or fiscal reporting burdens.</li>
+                        <li><strong>Explicit Research Questions & Hypotheses Matrix (Section 06):</strong> Following your recommendation to clearly define the scientific inquiry, Section 06 now features a dedicated Core Research Questions (RQs) & Empirical Hypotheses Matrix across all four domains—anchoring your pecan truffle (<em>Tuber lyonii</em>) mycorrhizal colonization dynamics, soil organic carbon (SOC) flux, and non-timber polyculture yields as Domain 1.</li>
+                    </ul>
+                </div>
+
+                <p><strong>Next Steps & Your Feedback:</strong><br>
+                I would greatly appreciate your frank feedback, suggestions, and corrections on this working draft—particularly regarding the biological field protocols and how we can best support your laboratory’s long-term research goals.</p>
+
+                <p>Please let me know if you would like me to stop by your office in Carver Hall or jump on a brief call once you’ve had a chance to look it over. Once you give the green light and we incorporate your thoughts, I will share the working draft with the rest of the coalition.</p>
+
+                <p>Thank you for your continued mentorship, wisdom, and leadership in our department.</p>
+
+                <div class="sig-box">
+                    <div class="sig-name">W. Chris Harrison, MLA</div>
+                    Assistant Professor of Landscape Architecture<br>
+                    Project Director & Lead PI, LL-DAL Platform<br>
+                    Department of Natural Resources & Environmental Design (NRED)<br>
+                    College of Agriculture and Environmental Sciences | North Carolina A&T State University<br>
+                    Office: 224-B Carver Hall | Email: wcharrison@ncat.edu
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- EMAIL 1: FULL PROPOSAL TEAM -->
+        <!-- ========================================================================= -->
+        <div class="email-card">
+            <div class="email-header">
+                <span class="email-badge">Email 1 • Full Proposal Coalition</span>
+                <div class="email-title">Proposal Blueprint Distribution & Internal Submission Notification</div>
+            </div>
+            <div class="email-fields">
+                <div class="email-field">
+                    <strong>To:</strong>
+                    <span>Dr. Jun Yang &lt;jyang@ncat.edu&gt;, Dr. Momtanu Chakraborty &lt;mchakraborty@ncat.edu&gt;, Dr. Leila Hashemi Beni &lt;lhashemibeni@ncat.edu&gt;, Dr. Felicia N. Anike &lt;fnanike@ncat.edu&gt;, Dr. Porché L. Spence &lt;plspence@ncat.edu&gt;, Dr. Chastity Warren English &lt;cwenglish@ncat.edu&gt;, Jeffrey A. Kuehner &lt;jakuehne@ncat.edu&gt;, Charles Hopper &lt;crhopper@ncat.edu&gt;, Dr. Hannah Talton &lt;htalton@ncat.edu&gt;, Dr. Omoanghe S. Isikhuemhen &lt;omoni@ncat.edu&gt;</span>
+                </div>
+                <div class="email-field">
+                    <strong>CC:</strong>
+                    <span>Dr. Niroj Aryal &lt;naryal@ncat.edu&gt; (Department Chair, NRED)</span>
+                </div>
+                <div class="email-field">
+                    <strong>Subject:</strong>
+                    <span><strong>Working Proposal Blueprint & Collaborative Framework: USDA NIFA 1890 CBG ($750K Integrated Track) — Internal NOI Submitted Today (Sept 9)</strong></span>
+                </div>
+                <div class="email-field">
+                    <strong>Attached:</strong>
+                    <span><em>USDA-NIFA-CBG-Integrated-Proposal-Blueprint-2026.pdf</em> (Working Draft Blueprint)</span>
+                </div>
+            </div>
+            <div class="email-body">
+                <p>Dear LL-DAL Project Team and Colleagues,</p>
+
+                <p>I hope your semester is off to a productive start. Attached for your review is the <strong>working draft</strong> of our Executive Proposal Blueprint for our upcoming <strong>USDA NIFA 1890 Institution Capacity Building Grants (CBG)</strong> submission: <strong><em>Living Landscapes & Digital Agroforestry Laboratory (LL-DAL)</em></strong> ($750,000 across 36 months on the Integrated Teaching, Research, and Extension track).</p>
+
+                <p>Following in-depth strategic consultation with our Department Chair, <strong>Dr. Niroj Aryal</strong>, this application is positioned strictly around <strong>enduring institutional capacity building</strong> rather than routine departmental support. As federal review panels mandate, every dollar is tied to creating permanent university assets, accredited graduate pathways, and workforce credentials across three collaborating colleges (<strong>CAES, CoST, and COE</strong>) in partnership with <strong>Cooperative Extension</strong> at the Small Farm Research and Innovation Center (SFRIC).</p>
+
+                <div class="callout-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; color: #166534;">
+                    <strong>Important Note — Working Draft & Open Collaboration:</strong><br>
+                    Please view the attached document as an <strong>initial working draft and collaborative scaffold</strong>. Today’s internal Notice of Intent (NOI) submission to the Division of Research serves strictly to meet today's campus deadline and secure our institutional placeholder. The entire proposal—including individual scopes of work, course linkages, research questions, and deliverables—<strong>remains completely open and will be updated collaboratively with your input</strong>.
+                </div>
+
+                <div class="callout-box">
+                    <strong>The Five Built Capacities of LL-DAL:</strong>
+                    <ul style="margin: 4px 0 2px 18px;">
+                        <li><strong>Spatial Design Center & Computing Lab Space:</strong> Equipping a dedicated lab with 6 GPU rendering workstations, VR suites, and deploying the dual-engine spatial computing suite (advancing our proven <strong>AVA</strong> AI design and SITES v2 rating engine integrated with <strong>GeoScope</strong> GIS).</li>
+                        <li><strong>The Graduate Elevation Bridge:</strong> Constructing the essential curricular, computational, and laboratory groundwork to establish a future professional <strong>Master of Landscape Architecture (MLA)</strong> (first HBCU LAAB-accredited MLA in modern decades) and an interdisciplinary <strong>M.S. in Applied Environmental Planning</strong>.</li>
+                        <li><strong>The Living Fungal Forest Laboratory:</strong> Permanent biological field infrastructure establishing pecan truffle (<em>Tuber lyonii</em>) inoculated orchards and medicinal fungal polycultures with a 15–20 year empirical research horizon (Dr. Anike & Dr. Isikhuemhen).</li>
+                        <li><strong>Workforce Credentialing Pipeline:</strong> Training and graduating <strong>45+ historically underrepresented students</strong> with verified national certifications (<em>NRCS Conservation Planning, SITES AP, ABCD Leadership</em>).</li>
+                        <li><strong>SFRIC Living Extension Lab:</strong> Operationalizing autonomous quadruped ("robot dog") scouting and parcel-scale digital farm twins for small, limited-resource landowners.</li>
+                    </ul>
+                </div>
+
+                <p><strong>Key Highlights in the Attached Working Draft:</strong></p>
+                <ul>
+                    <li><strong>Initial Scope of Work & Workload Matrix (Section 04):</strong> To protect faculty time and prevent burnout, we have proposed a balanced distribution of person-months, summer support, discrete deliverables, and non-overlapping domain boundaries. Dr. Momtanu Chakraborty and I are paired to co-lead all 3D modeling, UAV photogrammetric reconstruction, and digital twin simulation engines.</li>
+                    <li><strong>Investigator Domain Competencies Matrix (Section 05):</strong> Directly addresses NIFA's 20-point review criterion by mapping our multidisciplinary faculty strengths, appointments, and verified track records to the proposed scope.</li>
+                    <li><strong>The LL-DAL Collaborative 5-Paper Suite (Section 06):</strong> Rather than unrealistic promises of isolated individual papers, we propose 5 interdisciplinary, cross-college peer-reviewed journal papers (CELA <em>LRR</em>, <em>Comp. & Electronics in Ag</em>, <em>Agroforestry Systems</em>, <em>Remote Sensing</em>, <em>Journal of Extension</em>), each featuring undergraduate student co-authors.</li>
+                </ul>
+
+                <p><strong>Room for Feedback & Upcoming Team Discussion:</strong><br>
+                I want to make sure everyone has plenty of room to shape this proposal so that your specific research priorities, lab needs, and student training goals are fully reflected. <strong>We will get together soon as a full project team (in-person and hybrid Zoom) to discuss everything, walk through your feedback, and update the plan together.</strong> In the meantime, please review your assigned sections (Section 07) and feel free to email me any preliminary thoughts, ideas, or adjustments you'd like to incorporate.</p>
+
+                <p>Thank you all for your extraordinary leadership, dedication, and collaborative spirit as we build transformative capacity for North Carolina A&T and our students.</p>
+
+                <div class="sig-box">
+                    <div class="sig-name">W. Chris Harrison, MLA</div>
+                    Assistant Professor of Landscape Architecture<br>
+                    Project Director & Lead PI, LL-DAL Platform<br>
+                    Department of Natural Resources & Environmental Design (NRED)<br>
+                    College of Agriculture and Environmental Sciences | North Carolina A&T State University<br>
+                    Email: wcharrison@ncat.edu
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- EMAIL 2: INVITATION TO DR. HANNAH TALTON -->
+        <!-- ========================================================================= -->
+        <div class="email-card page-break">
+            <div class="email-header" style="background: var(--nrcs-green);">
+                <span class="email-badge" style="background: white; color: var(--nrcs-green);">Email 2 • Formal Faculty Invitation</span>
+                <div class="email-title">Invitation to Join Proposal Team: Dr. Hannah Talton (Extension Robotics)</div>
+            </div>
+            <div class="email-fields">
+                <div class="email-field">
+                    <strong>To:</strong>
+                    <span>Dr. Hannah Talton &lt;htalton@ncat.edu&gt; (Assistant Professor & Extension Specialist - IPM)</span>
+                </div>
+                <div class="email-field">
+                    <strong>CC:</strong>
+                    <span>Charles Hopper &lt;crhopper@ncat.edu&gt; (SFRIC Director), Dr. Niroj Aryal &lt;naryal@ncat.edu&gt; (NRED Chair)</span>
+                </div>
+                <div class="email-field">
+                    <strong>Subject:</strong>
+                    <span><strong>Invitation to Join USDA NIFA 1890 CBG Proposal: Extension Robotics & Field Diagnostics Co-Investigator ($750K Integrated Track)</strong></span>
+                </div>
+                <div class="email-field">
+                    <strong>Attached:</strong>
+                    <span><em>USDA-NIFA-CBG-Integrated-Proposal-Blueprint-2026.pdf</em> (Working Draft)</span>
+                </div>
+            </div>
+            <div class="email-body">
+                <p>Dear Dr. Talton,</p>
+
+                <p>I hope your semester is going smoothly. In collaboration with Charlie Hopper at the Small Farm Research and Innovation Center (SFRIC) and our interdisciplinary team across CAES, CoST, and Engineering, I would like to warmly invite you to join our team as <strong>Extension Co-Investigator (Robotics & Field Diagnostics)</strong> on a major $750,000, 36-month <strong>USDA NIFA 1890 Capacity Building Grant (CBG)</strong> proposal titled <em>Living Landscapes & Digital Agroforestry Laboratory (LL-DAL)</em>.</p>
+
+                <p>Your specialized expertise in integrated pest management, plant disease diagnostics, and automated field scouting fills a critical leadership role in our project’s <strong>Extension Core ($175,000 budget allocation)</strong>. We are transforming SFRIC's 100+ acre facility into a permanent <strong>Living Extension Lab</strong>, and we want you to direct the biological testing, field validation, and farmer-facing translation of our autonomous robotics initiative.</p>
+
+                <div class="callout-box">
+                    <strong>Proposed Role & Deliverables (Extension Track):</strong>
+                    <ul style="margin: 4px 0 2px 18px;">
+                        <li><strong>Autonomous Quadruped ("Robot Dog") Scouting SOPs:</strong> Develop and field-validate Standard Operating Procedures for deploying autonomous quadruped robots equipped with AI vision and multispectral sensors to detect plant diseases, canopy stress, and insect vectors in orchard and agroforestry plots.</li>
+                        <li><strong>Cooperative Extension Publications:</strong> Author <strong>4 NC Cooperative Extension Technical Bulletins</strong> translating high-tech scouting and IPM diagnostics into actionable field guides for small, limited-resource, and minority growers.</li>
+                        <li><strong>Living Lab Field Demonstrations:</strong> Lead live robotic field diagnostic demonstrations during 6 regional landowner demonstration days hosted at SFRIC (reaching 120+ woodland owners and county agents).</li>
+                        <li><strong>Peer-Reviewed Authorship:</strong> Serve as Lead Author on <strong>Paper 5</strong> of our collaborative 5-paper suite: <em>"Autonomous Quadruped Robotic Scouting and Parcel-Scale Digital Twins: An Extension Demonstration Model for Underserved Forestland Owners"</em> targeted for the <em>Journal of Extension (JOE)</em> / <em>NACTA Journal</em>.</li>
+                    </ul>
+                </div>
+
+                <p><strong>Support & Effort Structure:</strong><br>
+                This role is designed to directly support your existing Extension mission without adding administrative grant burdens. The grant provides allowable Extension Specialist summer/effort support, student field assistants to handle equipment operations, and direct collaboration with Charlie Hopper for facility logistics. As Lead PI, I handle all university DOR compliance, fiscal accounting, and annual federal REEport filings.</p>
+
+                <p>I have attached our <strong>working draft</strong> Proposal Blueprint for your review (your role and deliverables are detailed in Sections 03, 04, 05, and 06). To ensure our institutional placeholder and meet today's Division of Research (DOR) internal deadline, I have submitted our preliminary team roster including your proposed Extension leadership role. Please note that this is entirely a working draft and non-binding—the overall proposal and your specific scope are completely flexible, and we will update and shape the narrative together based on your vision and schedule.</p>
+
+                <p>Could you please confirm if you are willing to join our team as Extension Co-Investigator? I would also be thrilled to get together for a quick call or meet for coffee to discuss how we can tailor this project to accelerate your Extension research program.</p>
+
+                <p>Thank you for considering this collaboration, and I look forward to working together!</p>
+
+                <div class="sig-box">
+                    <div class="sig-name">W. Chris Harrison, MLA</div>
+                    Assistant Professor of Landscape Architecture<br>
+                    Project Director & Lead PI, LL-DAL Platform<br>
+                    Department of Natural Resources & Environmental Design (NRED)<br>
+                    College of Agriculture and Environmental Sciences | North Carolina A&T State University<br>
+                    Email: wcharrison@ncat.edu
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- EMAIL 3: LA PROGRAM MEETING -->
+        <!-- ========================================================================= -->
+        <div class="email-card page-break">
+            <div class="email-header" style="background: var(--aggie-blue);">
+                <span class="email-badge" style="background: var(--aggie-gold); color: var(--aggie-blue-dark);">Email 3 • Landscape Architecture Faculty</span>
+                <div class="email-title">Convening Landscape Architecture Faculty Alignment Meeting (Friday @ 12:00 PM)</div>
+            </div>
+            <div class="email-fields">
+                <div class="email-field">
+                    <strong>To:</strong>
+                    <span>Dr. Jun Yang &lt;jyang@ncat.edu&gt;, Jeffrey A. Kuehner &lt;jakuehne@ncat.edu&gt;</span>
+                </div>
+                <div class="email-field">
+                    <strong>CC:</strong>
+                    <span>Dr. Niroj Aryal &lt;naryal@ncat.edu&gt; (Department Chair, NRED)</span>
+                </div>
+                <div class="email-field">
+                    <strong>Subject:</strong>
+                    <span><strong>Landscape Architecture Program Alignment & Strategic Planning Meeting — Friday, Sept 11 at 12:00 PM</strong></span>
+                </div>
+                <div class="email-field">
+                    <strong>Location:</strong>
+                    <span>Design Studio / Spatial Lab (Carver Hall) — Zoom link available for hybrid attendance</span>
+                </div>
+            </div>
+            <div class="email-body">
+                <p>Dear Jun and Jeff,</p>
+
+                <p>Following up on Department Chair Dr. Aryal's request to convene our Landscape Architecture program faculty, I would like to schedule a dedicated, 60-minute program alignment and strategic planning meeting for this <strong>Friday, September 11, at 12:00 PM</strong>.</p>
+
+                <p>With major strategic initiatives underway—including our $750K USDA NIFA Capacity Building Grant submission, the commissioning of our new <strong>Spatial Design Center & Computing Lab Space</strong>, and our ongoing efforts toward scaffolding the future <strong>Master of Landscape Architecture (MLA)</strong> degree—it is vital that our teaching team meets to align on our studio continuum, student success metrics, and shared resources.</p>
+
+                <div class="callout-box" style="background: #f8fafc; border-color: var(--aggie-blue); color: var(--slate-900);">
+                    <strong style="color: var(--aggie-blue-dark); text-transform: uppercase; font-size: 8.5pt;">Proposed Meeting Agenda (60 Minutes):</strong>
+                    <ol style="margin: 6px 0 2px 20px;">
+                        <li><strong>Studio Curricular Continuum & Pedagogical Synergies (20 min):</strong>
+                            <ul>
+                                <li><em>Foundational Studios (LDAR 147/148 & 170/171 - Chris):</em> Analog-to-digital bridge, hand sketching confidence, GPU lab workflows, and early BIM training.</li>
+                                <li><em>Sophomore Studios (LDAR 247/248 - Dallas):</em> Social systems, ecological performance, and community engagement.</li>
+                                <li><em>Junior Studios (LDAR 345/347/348 - Jun):</em> Master planning, generative AI design cognition, terrain modeling, and longitudinal cognitive tracking.</li>
+                                <li><em>Senior Capstones & Practice (LDAR 447/448, 442, 440, 455 - Jeff):</em> Senior capstones, LDAR 442 Design in Practice, LDAR 440 Proposal Writing, and LDAR 455 Current Issues, and portfolio defense.</li>
+                                <li><em>Instructional FTE & Accreditation (All):</em> Fulfilling current 5.0 FTE with 2 adjuncts for BSLA, and scaffolding the required 7.0 FTE (5 full-time) for the 4+1 MLA expansion.</li>
+                            </ul>
+                        </li>
+                        <li><strong>USDA NIFA Grant Integration & Spatial Lab Resources (15 min):</strong>
+                            <ul>
+                                <li>Reviewing our $750k LL-DAL blueprint, hardware allocation (6 GPU workstations, VR suites, drone docks), and how our software engines (GeoScope GIS + AVA) will directly elevate your studio teaching and research publications.</li>
+                            </ul>
+                        </li>
+                        <li><strong>The Graduate Elevation Bridge — Master of Landscape Architecture (15 min):</strong>
+                            <ul>
+                                <li>Aligning undergraduate coursework, computing resources, and faculty FTE capacity to establish the curricular scaffolding and LAAB accreditation feasibility required to position NC A&T to establish the first modern HBCU graduate MLA program.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Student Retention, Studio Culture & Portfolio Reviews (10 min):</strong>
+                            <ul>
+                                <li>Coordinating mid-term studio pin-ups, portfolio review rubrics, and cohesive student support.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <p>Please let me know if Friday at 12:00 PM works for both of your schedules. If anyone has a schedule conflict, please reply with your available windows on Friday afternoon so we can ensure full attendance. I will provide lunch / light refreshments for our in-person discussion in the studio.</p>
+
+                <p>I look forward to our conversation and to continuing to advance our Landscape Architecture program together.</p>
+
+                <div class="sig-box">
+                    <div class="sig-name">W. Chris Harrison, MLA</div>
+                    Assistant Professor of Landscape Architecture<br>
+                    Department of Natural Resources & Environmental Design (NRED)<br>
+                    College of Agriculture and Environmental Sciences | North Carolina A&T State University<br>
+                    Email: wcharrison@ncat.edu
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

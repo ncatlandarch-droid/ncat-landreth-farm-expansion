@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- NC A&T Interlocking AT Mark - Aggie Gold on transparent -->
+  <!-- T - behind the A -->
+  <rect x="38" y="5" width="44" height="110" rx="3" fill="#FDB927"/>
+  <rect x="8" y="5" width="104" height="28" rx="3" fill="#FDB927"/>
+  <!-- A - overlapping the T -->
+  <polygon points="60,2 14,118 38,118 60,58" fill="white"/>
+  <polygon points="60,2 106,118 82,118 60,58" fill="white"/>
+  <!-- A crossbar -->
+  <rect x="32" y="68" width="56" height="16" rx="2" fill="white"/>
+  <!-- T showing through A gap (top triangle) -->
+  <polygon points="60,10 42,33 78,33" fill="#FDB927"/>
+</svg>

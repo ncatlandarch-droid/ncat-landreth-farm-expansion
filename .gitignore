@@ -1,0 +1,28 @@
+
+.env
+.env.*
+*.secret
+
+# Heavy audio & media
+audiobook-seth-speaks/
+the-real-speak/
+*.mp3
+*.wav
+*.m4a
+
+# Browser Profiles & Caches
+chrome_profile_notebooklm/
+.cache/
+
+# Sensitive Admissions / Student Data
+*.xlsx
+*Freshmen*
+*Admitted*
+
+# Temp / Scratch / Build
+test_*.docx
+test_*.html
+W
+node_modules/
+.netlify/
+

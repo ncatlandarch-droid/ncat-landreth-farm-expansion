@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USDA NIFA 1890 Capacity Building Grant (CBG) — Living Landscapes Laboratory Program Elevation Overview | North Carolina A&T State University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --aggie-blue: #004684;
+      --aggie-blue-dark: #002d57;
+      --aggie-gold: #FDB927;
+      --aggie-gold-dark: #d99b16;
+      --aggie-gold-light: #fef9e8;
+      --aggie-gold-border: #fce196;
+      --nrcs-green: #2e7d32;
+      --green-light: #e8f5e9;
+      --teal: #00897B;
+      --teal-light: #e0f2f1;
+      --dark: #121826;
+      --text: #222938;
+      --text-muted: #546076;
+      --bg: #ffffff;
+      --border: #dbe2ea;
+      --border-light: #edf2f7;
+      --section-bg: #f8fafc;
+      --red: #c62828;
+      --red-light: #ffebee;
+      --amber: #e65100;
+      --amber-light: #fff3e0;
+      --blue-subtle: #eff6ff;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: var(--text);
+      background: #f1f5f9;
+      margin: 0;
+      padding: 24px 0 48px;
+    }
+
+    /* Action bar for screen only */
+    .top-action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--aggie-blue-dark);
+      color: white;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-bottom: 3px solid var(--aggie-gold);
+    }
+    .top-action-bar .bar-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .top-action-bar .bar-title span {
+      color: var(--aggie-gold);
+    }
+    .top-action-bar .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn-print {
+      background: var(--aggie-gold);
+      color: var(--aggie-blue-dark);
+      border: none;
+      padding: 8px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9pt;
+      font-weight: 800;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .btn-print:hover {
+      background: #ffffff;
+      color: var(--aggie-blue);
+      transform: translateY(-1px);
+    }
+    .doc-badge-pill {
+      background: rgba(253, 185, 39, 0.2);
+      border: 1px solid var(--aggie-gold);
+      color: var(--aggie-gold);
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Main Page Container */
+    .document-page {
+      max-width: 8.5in;
+      margin: 20px auto;
+      background: var(--bg);
+      padding: 0.55in;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-radius: 4px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    /* Official NC A&T Header */
+    .report-header {
+      border-bottom: 4px solid var(--aggie-blue);
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-logo {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-title-block .inst-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--aggie-blue);
+      margin-bottom: 2px;
+    }
+    .header-title-block .dept-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .header-meta-block {
+      text-align: right;
+      font-size: 8pt;
+      color: var(--text-muted);
+      line-height: 1.45;
+      border-left: 2px solid var(--aggie-gold);
+      padding-left: 12px;
+    }
+    .header-meta-block strong {
+      color: var(--aggie-blue);
+      font-size: 8.5pt;
+    }
+
+    /* Executive Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--aggie-blue-dark) 0%, var(--aggie-blue) 100%);
+      color: white;
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin-bottom: 22px;
+      position: relative;
+      border-left: 6px solid var(--aggie-gold);
+    }
+    .hero-banner .grant-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--aggie-gold);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-banner h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 19pt;
+      font-weight: 700;
+      line-height: 1.22;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .hero-banner .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 10pt;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 95%;
+      line-height: 1.45;
+    }
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .meta-item .meta-label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(253, 185, 39, 0.95);
+      font-weight: 700;
+    }
+    .meta-item .meta-val {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 22px;
+    }
+    .section-header {
+      background: var(--aggie-blue);
+      color: white;
+      padding: 7px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+    .section-header .num {
+      background: var(--aggie-gold);
+      color: var(--aggie-blue);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10pt;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .section-header .section-subtitle-tag {
+      margin-left: auto;
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(255,255,255,0.15);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--aggie-blue);
+      margin: 14px 0 8px;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 10px 0 6px;
+    }
+
+    p {
+      margin-bottom: 9px;
+      font-size: 9.6pt;
+      line-height: 1.55;
+    }
+    strong { font-weight: 700; color: var(--dark); }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.8pt;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+    th {
+      background: var(--aggie-blue);
+      color: white;
+      text-align: left;
+      padding: 6px 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+    tr:nth-child(even) td { background: var(--section-bg); }
+    tr.highlight-row td { background: var(--aggie-gold-light); font-weight: 600; }
+    tr.highlight-accent td { background: #eef5fc; border-left: 3px solid var(--aggie-blue); }
+
+    /* Cards & Grids */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .four-col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: var(--section-bg);
+      border-radius: 4px;
+      padding: 12px 14px;
+      position: relative;
+    }
+    .card.blue-card {
+      border-top: 3px solid var(--aggie-blue);
+      background: #ffffff;
+    }
+    .card.gold-card {
+      border-top: 3px solid var(--aggie-gold);
+      background: var(--aggie-gold-light);
+    }
+    .card.green-card {
+      border-top: 3px solid var(--nrcs-green);
+      background: #ffffff;
+    }
+    .card.teal-card {
+      border-top: 3px solid var(--teal);
+      background: #ffffff;
+    }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Metric Cards */
+    .metric-card {
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 12px 10px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .metric-card .val {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20pt;
+      font-weight: 900;
+      color: var(--aggie-blue);
+      line-height: 1;
+    }
+    .metric-card .label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .metric-card.gold-metric { border-color: var(--aggie-gold-border); background: var(--aggie-gold-light); }
+    .metric-card.gold-metric .val { color: var(--aggie-gold-dark); }
+    .metric-card.green-metric { border-color: #c8e6c9; background: var(--green-light); }
+    .metric-card.green-metric .val { color: var(--nrcs-green); }
+
+    /* Alerts / Callout Boxes */
+    .callout {
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 9.2pt;
+      margin-bottom: 14px;
+      border-left: 4.5px solid;
+      line-height: 1.5;
+    }
+    .callout.info { background: var(--blue-subtle); border-color: var(--aggie-blue); }
+    .callout.gold { background: var(--aggie-gold-light); border-color: var(--aggie-gold); border-left-width: 5px; }
+    .callout.success { background: var(--green-light); border-color: var(--nrcs-green); }
+    .callout.warn { background: var(--amber-light); border-color: var(--amber); }
+    .callout.danger { background: var(--red-light); border-color: var(--red); }
+    .callout-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Badges & Tags */
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-blue { background: var(--aggie-blue); color: white; }
+    .badge-gold { background: var(--aggie-gold); color: var(--aggie-blue-dark); font-weight: 800; }
+    .badge-green { background: var(--nrcs-green); color: white; }
+    .badge-teal { background: var(--teal); color: white; }
+    .badge-outline { border: 1px solid var(--aggie-blue); color: var(--aggie-blue); background: white; }
+
+    /* Timeline Diagram */
+    .progression-flow {
+      display: flex;
+      gap: 0;
+      margin: 14px 0 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .flow-step {
+      flex: 1;
+      padding: 10px 12px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.25);
+      position: relative;
+    }
+    .flow-step:last-child { border-right: none; }
+    .flow-step .step-year {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+    .flow-step .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 800;
+      margin: 2px 0 4px;
+    }
+    .flow-step .step-core {
+      font-size: 8pt;
+      line-height: 1.35;
+      opacity: 0.95;
+    }
+    .step-y1 { background: #1e3a8a; color: white; }
+    .step-y2 { background: #047857; color: white; }
+    .step-y3 { background: #b45309; color: white; }
+    .step-y4 { background: #4338ca; color: white; }
+
+    /* Competency Grid */
+    .ability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .ability-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px 12px;
+      border-left: 4px solid var(--aggie-blue);
+    }
+    .ability-box.gold-edge { border-left-color: var(--aggie-gold); }
+    .ability-box.green-edge { border-left-color: var(--nrcs-green); }
+    .ability-box.teal-edge { border-left-color: var(--teal); }
+    .ability-box h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.8pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--aggie-blue);
+    }
+    .ability-box p {
+      font-size: 8.4pt;
+      margin-bottom: 0;
+      color: var(--text);
+    }
+
+    /* Deliverables List */
+    .deliverable-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+      align-items: flex-start;
+      font-size: 8.8pt;
+    }
+    .deliverable-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .deliverable-icon {
+      background: var(--blue-subtle);
+      color: var(--aggie-blue);
+      border: 1px solid #bfdbfe;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8pt;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Footer */
+    .report-footer {
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 2.5px solid var(--aggie-blue);
+      font-size: 8pt;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .report-footer strong { color: var(--aggie-blue); }
+
+    /* Page Breaks for Print */
+    .page-break {
+      display: none;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+        font-size: 9pt;
+        color: #000000;
+      }
+      .top-action-bar {
+        display: none !important;
+      }
+      .document-page {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0.4in 0.4in !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      @page {
+        margin: 0.45in;
+        size: letter portrait;
+      }
+      .page-break {
+        display: block !important;
+        page-break-before: always !important;
+        break-before: page !important;
+        height: 0;
+      }
+      .section {
+        page-break-inside: auto;
+      }
+      .section-header {
+        page-break-after: avoid;
+      }
+      table, .card, .metric-card, .callout, .ability-box {
+        page-break-inside: avoid;
+      }
+      tr {
+        page-break-inside: avoid;
+      }
+      h3, h4 {
+        page-break-after: avoid;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-Only Sticky Action Bar -->
+  <div class="top-action-bar">
+    <div class="bar-title">
+      <img src="North_Carolina_A%26T_Aggies_logo.svg" alt="NC A&T" style="height:22px; width:auto;">
+      United States Department of Agriculture (USDA) NIFA 1890 Capacity Building Grants (CBG) <span>Program Elevation Overview</span>
+    </div>
+    <div class="actions">
+      <span class="doc-badge-pill" style="background: rgba(253, 185, 39, 0.3); border-color: var(--aggie-gold); color: var(--aggie-gold); font-weight: 800;">WORKING DRAFT • FOR CO-PI REVIEW</span>
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Document Body Wrapper -->
+  <div class="document-page">
+
+    <!-- Official NC A&T Header Block -->
+    <header class="report-header">
+      <div class="header-top">
+        <div class="header-brand-group">
+          <img src="North_Carolina_A%26T_Aggies_logo.svg" alt="NC A&T State University Logo" class="header-logo">
+          <div class="header-title-block">
+            <div class="inst-name">North Carolina Agricultural and Technical State University</div>
+            <div class="dept-name">
+              College of Agriculture and Environmental Sciences (CAES)<br>
+              Department of Natural Resources and Environmental Design (NRED)<br>
+              Landscape Architecture Academic Program — Bachelor of Science in Landscape Architecture (BSLA)
+            </div>
+          </div>
+        </div>
+        <div class="header-meta-block">
+          <strong style="color: var(--aggie-blue);">PROGRAM ELEVATION PROSPECTUS</strong><br>
+          <span style="display:inline-block; background: var(--aggie-gold); color: var(--aggie-blue-dark); font-size:7pt; font-weight:800; padding:1px 6px; border-radius:2px; text-transform:uppercase; margin-bottom:2px;">Working Draft for Co-PI Input &amp; Calibration</span><br>
+          USDA National Institute of Food and Agriculture (NIFA)<br>
+          1890 Capacity Building Grants (CBG) Program<br>
+          Notice of Funding Opportunity (NOFO): USDA-NIFA-CBGP-011698<br>
+          Assistance Listing: 10.216 • Notice of Intent (NOI): September 9, 2026
+        </div>
+      </div>
+    </header>
+
+    <!-- Working Draft Banner for Co-PI Team Input -->
+    <div style="background: #fffbeb; border: 1.5px dashed var(--aggie-gold-dark); border-radius: 4px; padding: 8px 14px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 8.4pt; color: #92400e; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+      <div>
+        <strong style="text-transform: uppercase; letter-spacing: 0.04em;">Working Draft for Co-PI Team Review &amp; Input:</strong> This prospectus establishes our initial collaborative framework for Wednesday's Notice of Intent (NOI) placeholder. All narrative sections, research scopes, and budget allocations are fully open for Co-PI review, calibration, and adjustment prior to the September 28 full proposal submission.
+      </div>
+      <span class="badge badge-gold" style="font-size: 7.5pt; margin-left: 12px; white-space: nowrap; padding: 3px 8px;">DRAFT FOR INPUT</span>
+    </div>
+
+    <!-- Executive Hero Banner -->
+    <div class="hero-banner">
+      <div class="grant-tag">
+        <span class="badge badge-gold">UNITED STATES DEPARTMENT OF AGRICULTURE (USDA) • NIFA 1890 CAPACITY BUILDING GRANT (CBG)</span>
+        <span>Collaborative Education Project (Teaching + Research + Extension across CAES &amp; CoST)</span>
+      </div>
+      <h1>Living Landscapes Laboratory:</h1>
+      <div class="hero-subtitle">
+        Building Digital, Ecological, and Workforce Capacity in the Nation's Only Accredited Undergraduate Historically Black College or University (HBCU) Landscape Architecture Program (Jan 2027 – Dec 2029)
+      </div>
+
+      <div class="hero-meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Principal Investigator (PI)</div>
+          <div class="meta-val">W. Christopher Harrison, MLA, ASLA</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Co-Principal Investigators (Co-PIs)</div>
+          <div class="meta-val">Dr. O. Isikhuemhen, Dr. L. Hashemi-Beni, Dr. P. Spence, Dr. J. Yang, D. Bretzman</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Federal Request / Term</div>
+          <div class="meta-val">$500,000 (36 Months)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Institutional Leverage</div>
+          <div class="meta-val">Active Evans-Allen (Fund 241206) + SFRIC</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Callout: The Core Significance -->
+    <div class="callout gold">
+      <div class="callout-title" style="color: var(--aggie-blue);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        National Uniqueness &amp; Strategic Significance: The Nation's Sole Undergraduate HBCU Pipeline
+      </div>
+      North Carolina Agricultural and Technical State University (NC A&amp;T) houses the <strong>only undergraduate program of Landscape Architecture (Bachelor of Science in Landscape Architecture [BSLA]) accredited by the Landscape Architectural Accreditation Board (LAAB) at any Historically Black College or University (HBCU) in the nation</strong>. Every single undergraduate student seeking an accredited HBCU degree pathway into the profession must come through North Carolina A&amp;T. This capacity building initiative establishes an integrated computational design, Internet of Things (IoT) environmental sensing, and digital twin curriculum—ensuring the nation's foundational diversity pipeline leads the discipline in technological excellence, professional certifications, and community-engaged practice.
+    </div>
+
+    <!-- 4 High-Impact KPI Metric Blocks -->
+    <div class="four-col">
+      <div class="metric-card">
+        <div class="val">1 of 1</div>
+        <div class="label">Only HBCU Undergrad BSLA</div>
+      </div>
+      <div class="metric-card gold-metric">
+        <div class="val">8 Courses</div>
+        <div class="label">Redesigned Digital Sequence</div>
+      </div>
+      <div class="metric-card green-metric">
+        <div class="val">492 Acres</div>
+        <div class="label">SFRIC Living Field Lab</div>
+      </div>
+      <div class="metric-card">
+        <div class="val">100%</div>
+        <div class="label">Faculty Unified on Grant</div>
+      </div>
+    </div>
+
+    <!-- SECTION 1: THE CORE PROBLEM & STRATEGIC OPPORTUNITY -->
+    <!-- SECTION 1: THE CORE PROBLEM & STRATEGIC OPPORTUNITY -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">1</span>
+        <span>The Problem, Institutional Need &amp; Strategic Opportunity</span>
+        <span class="section-subtitle-tag">Context &amp; Urgency</span>
+      </div>
+
+      <div class="two-col">
+        <div class="card blue-card">
+          <div class="card-title" style="color: var(--aggie-blue);">
+            The Modern Landscape Industry Gap
+          </div>
+          <p>
+            The landscape architecture and civil planning professions are undergoing the most rapid technological realignment in 50 years. Top-tier design firms, regional planning agencies, and conservation organizations now demand graduates skilled in:
+          </p>
+          <ul style="padding-left: 18px; font-size: 8.6pt; line-height: 1.45; color: var(--text);">
+            <li><strong>Artificial Intelligence (AI)-augmented spatial intelligence</strong> &amp; site analysis</li>
+            <li><strong>Environmental Internet of Things (IoT) sensor integration</strong> (soil hydrology, microclimate thermal)</li>
+            <li><strong>Building Information Modeling (BIM) coordination</strong> (Vectorworks Landmark)</li>
+            <li><strong>High-resolution unmanned aerial vehicle (drone) photogrammetry &amp; 3D digital twins</strong></li>
+          </ul>
+          <p style="margin-top: 6px; font-size: 8.5pt; color: var(--text-muted);">
+            Without institutional investment, historically underrepresented students remain locked out of high-wage, high-impact computational design positions.
+          </p>
+        </div>
+
+        <div class="card gold-card">
+          <div class="card-title" style="color: var(--aggie-blue-dark);">
+            NC A&amp;T's Unique Position &amp; Momentum
+          </div>
+          <p>
+            Rather than starting from scratch, North Carolina A&amp;T faculty have already built substantial digital capacity through Evans-Allen research and departmental innovation:
+          </p>
+          <ul style="padding-left: 18px; font-size: 8.6pt; line-height: 1.45; color: var(--text);">
+            <li><strong>AVA V.4:</strong> Adaptive Visualization Assistant (AVA V.4) — Academic AI site intelligence &amp; Sustainable SITES Initiative (SITES v2) 250-point ecological rating engine (institutional visualization asset)</li>
+            <li><strong>Modular Digital Curricula:</strong> Standardized Canvas Learning Management System (LMS) course cartridges (.imscc) and digital rubrics</li>
+            <li><strong>Open Regional GIS Data Services:</strong> Live county parcel fabric, United States Geological Survey (USGS) contours, and United States Department of Agriculture (USDA) Natural Resources Conservation Service (NRCS) Soil Survey Geographic Database (SSURGO) soils Application Programming Interfaces (APIs)</li>
+            <li><strong>3 Completed Drone Surveys:</strong> High-resolution 3D photogrammetry models of campus core and research farm living laboratories</li>
+          </ul>
+          <p style="margin-top: 6px; font-size: 8.5pt; color: var(--text-muted);">
+            <strong>The Gap:</strong> While AVA provides cutting-edge spatial and ecological visualization, this capability must be formally integrated into accredited coursework and validated through peer-reviewed research.
+          </p>
+        </div>
+      </div>
+
+      <!-- SFRIC Multi-Site Network & Community Design Center (CDC) Matrix -->
+      <div class="card" style="background: white; border: 1.5px solid var(--aggie-blue); margin-top: 10px; margin-bottom: 4px;">
+        <div class="card-title" style="color: var(--aggie-blue); margin-bottom: 6px;">
+          SFRIC Multi-Site Living Laboratories &amp; The Community Design Center (CDC)
+        </div>
+        <p style="font-size: 8.5pt; margin-bottom: 8px;">
+          The Small Farm Research and Innovation Center (SFRIC) encompasses a diverse multi-site living laboratory network—including the 492-acre research farm, Inspiration Courtyard, Holland Bowl, and regional agricultural partners. To scale community impact, SFRIC is <strong>actively planning a dedicated Community Design Center (CDC)</strong> and is currently building strategic partnerships with the <strong>City of Greensboro</strong>, municipal planning and parks departments, local community leaders, and neighborhood grassroots organizations. Our Bachelor of Science in Landscape Architecture (BSLA) program connects directly to this developing center as its core design, visualization, and spatial modeling engine.
+        </p>
+        <table style="margin-bottom: 6px;">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Project / Site</th>
+              <th style="width: 25%;">Site Typology &amp; Scope</th>
+              <th style="width: 25%;">Embedded Student Experience</th>
+              <th style="width: 25%;">Community &amp; Extension Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>492-Acre Research Farm</strong><br><span style="font-size: 7.5pt; color: var(--text-muted);">East Greensboro • Agricultural Twin</span></td>
+              <td>Production agriculture, agroforestry, livestock grazing, and wetland riparian corridors.</td>
+              <td>Autonomous robotic surveying (Boston Dynamics Spot quadruped), drone photogrammetry, Soil Survey Geographic Database (SSURGO) soil sensor ground-truthing, and watershed runoff modeling.</td>
+              <td>Statewide farm resilience testing, demonstration field days, and digital twin conservation models.</td>
+            </tr>
+            <tr>
+              <td><strong>Inspiration Courtyard</strong><br><span style="font-size: 7.5pt; color: var(--text-muted);">Campus Living Lab • Design-Build</span></td>
+              <td>Contemplative campus oasis, pollinator habitat, microclimate sensor installation, and healing landscape.</td>
+              <td>Hands-on microclimate thermal mapping with Forward-Looking Infrared (FLIR) cameras, bio-acoustic pollinator monitoring (AudioMoth), and design-build material detailing.</td>
+              <td>Campus wellness anchor, student mental health sanctuary, and accessible urban green infrastructure model.</td>
+            </tr>
+            <tr>
+              <td><strong>Holland Bowl</strong><br><span style="font-size: 7.5pt; color: var(--text-muted);">Historic Campus Core • Stormwater Amphitheater</span></td>
+              <td>Major urban stormwater basin, campus gathering amphitheater, and civic event space.</td>
+              <td>Topographic grading, bio-retention engineering, hydrodynamic runoff simulation, and multi-scale visual diagramming.</td>
+              <td>Campus resilience flagship, urban heat mitigation, and high-visibility community gathering space.</td>
+            </tr>
+            <tr class="highlight-accent">
+              <td><strong>SFRIC Community Design Center (CDC)</strong><br><span style="font-size: 7.5pt; color: var(--text-muted);">Statewide Outreach Engine (In Planning)</span></td>
+              <td>North Carolina (NC) Cooperative Extension community design hub in planning, serving underserved small farms, historic urban corridors, and rural towns.</td>
+              <td>Client-facing design charrettes, Asset-Based Community Development (ABCD) workshops, master planning, and construction documentation.</td>
+              <td>Direct technical assistance to underserved farmers, municipal park designs, and community grant acquisition.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 2: HOW IT CONNECTS TO OUR PROGRAM -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">2</span>
+        <span>How the Grant Connects to &amp; Elevates Our Program</span>
+        <span class="section-subtitle-tag">Pedagogy &amp; Governance</span>
+      </div>
+
+      <p>
+        The <em>Living Landscapes Laboratory</em> directly answers three structural priorities within the College of Agriculture and Environmental Sciences (CAES) and the Department of Natural Resources and Environmental Design (NRED):
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 22%;">Strategic Dimension</th>
+            <th style="width: 38%;">Current Program State</th>
+            <th style="width: 40%;">Elevated State via USDA CBG Funding</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Accreditation Strength (LAAB Review 2027–2028)</strong></td>
+            <td>Program vulnerable following senior faculty departure; digital design sequence needs modernization to satisfy Landscape Architectural Accreditation Board (LAAB) Standard 3 (Curriculum) and Standard 6 (Research).</td>
+            <td>Establishes a published, peer-reviewed technological framework recognized nationally. Provides undeniable evidence of pedagogical innovation and digital leadership for re-accreditation.</td>
+          </tr>
+          <tr>
+            <td><strong>Faculty Cohesion &amp; Teaching Load</strong></td>
+            <td>Faculty operating in instructional silos; high studio contact hours make curriculum redesign difficult without dedicated summer support and student assistants.</td>
+            <td>Unifies all 4 program faculty (Harrison, Bretzman, Yang, Kuehner) on a shared 3-year interdisciplinary charter. Funds summer course build-out and 4 graduate teaching assistants.</td>
+          </tr>
+          <tr>
+            <td><strong>Research &amp; Tenure Productivity</strong></td>
+            <td>Tenure-track faculty (Harrison, Yang) need externally funded grants and peer-reviewed journal publications to secure tenure and promotion.</td>
+            <td>Directly funds Dr. Jun Yang's longitudinal AI pedagogy and design cognition research agenda and Chris Harrison's digital twin / agro-ecological modeling, targeting Council of Educators in Landscape Architecture (CELA) publications (including <em>Landscape Journal</em> and <em>Landscape Research Record</em>), the Environmental Design Research Association (EDRA), and peer-reviewed conference proceedings.</td>
+          </tr>
+          <tr>
+            <td><strong>Extension &amp; 1890 Community Impact</strong></td>
+            <td>Academic studios frequently design hypothetical or disconnected urban sites with minimal follow-through to actual construction.</td>
+            <td>Permanently integrates the 492-acre Small Farm Research and Innovation Center (SFRIC) and North Carolina (NC) Cooperative Extension partners as living client labs across all 4 years.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PAGE BREAK FOR CLEAN PRINTING -->
+    <div class="page-break"></div>
+
+    <!-- SECTION 3: THE 4-YEAR SCAFFOLDED CURRICULAR FRAMEWORK -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">3</span>
+        <span>The 4-Year Scaffolded Curricular Framework</span>
+        <span class="section-subtitle-tag">The Pedagogical Core</span>
+      </div>
+
+      <p>
+        A core strength of the proposal is its intentional <strong>scaffolding</strong>. Instead of abruptly replacing hand drafting with automated AI, the curriculum follows a rigorous progression: <em>Design + Observe → Measure → Model → Lead</em>. Hand drawing trains the eye and hand; digital tools expand analytical and spatial power.
+      </p>
+
+      <!-- Visual Progression Diagram -->
+      <div class="progression-flow">
+        <div class="flow-step step-y1">
+          <div class="step-year">Year 1: Freshman</div>
+          <div class="step-title">OBSERVE &amp; REPRESENT</div>
+          <div class="step-core">Hand drafting, lineweight, 15 weekly field sketches → Regional Geographic Information Systems (GIS) data as observation lens → Module 14 digital bridge → Vectorworks Landmark Building Information Modeling (BIM) spring start.</div>
+        </div>
+        <div class="flow-step step-y2">
+          <div class="step-year">Year 2: Sophomore</div>
+          <div class="step-title">MEASURE &amp; INTERPRET</div>
+          <div class="step-core">Real-world empirical data collection at SFRIC farm: Soil Survey Geographic Database (SSURGO) soil sensors, Forward-Looking Infrared (FLIR) microclimate thermography, drone aerial surveys, and flood zone mapping.</div>
+        </div>
+        <div class="flow-step step-y3">
+          <div class="step-year">Year 3: Junior</div>
+          <div class="step-title">MODEL &amp; TEST</div>
+          <div class="step-core">AVA Generative Artificial Intelligence (AI) site analysis, Sustainable SITES Initiative (SITES v2) 250-point ecological rating, stormwater modeling, USDA Environmental Quality Incentives Program (EQIP) conservation cost estimating, scenario testing.</div>
+        </div>
+        <div class="flow-step step-y4">
+          <div class="step-year">Year 4: Senior</div>
+          <div class="step-title">SYNTHESIZE &amp; LEAD</div>
+          <div class="step-core">Senior Capstone digital twins, Boston Dynamics Spot quadruped robot/Light Detection and Ranging (LiDAR) surveying, participatory community charrettes, Landscape Architect Registration Examination (LARE) licensing exam prep &amp; jury defense.</div>
+        </div>
+      </div>
+
+      <!-- Course Integration Matrix -->
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 14%;">Academic Level</th>
+            <th style="width: 24%;">Redesigned Core Courses</th>
+            <th style="width: 32%;">Embedded Technology &amp; Toolchain</th>
+            <th style="width: 30%;">Faculty Lead &amp; Student Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="badge badge-blue">YEAR 1</span><br>
+              <strong>Freshman</strong>
+            </td>
+            <td>
+              <strong>LDAR 147</strong> Design Foundations<br>
+              <strong>LDAR 170</strong> LA Graphics I<br>
+              <strong>LDAR 171</strong> LA Graphics II (BIM)
+            </td>
+            <td>
+              • 15 Weekly Outdoor Field Sketches<br>
+              • <strong>Geographic Information Systems (GIS) Data Layers:</strong> Read parcels, soils, zoning<br>
+              • <strong>Module 14 Digital Bridge:</strong> Hand-to-screen analog-to-digital transition<br>
+              • <strong>Vectorworks Landmark:</strong> Building Information Modeling (BIM) spring start
+            </td>
+            <td>
+              <strong>Chris Harrison / Jeff Kuehner</strong><br>
+              Students build fine-motor hand confidence, visual hierarchy, and spatial literacy before operating computational software.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="badge badge-green">YEAR 2</span><br>
+              <strong>Sophomore</strong>
+            </td>
+            <td>
+              <strong>LDAR 247</strong> Social Systems Studio<br>
+              <span class="badge badge-gold" style="font-size: 6.8pt; margin: 2px 0;">🏅 ABCD Certified</span><br>
+              <strong>LDAR 248</strong> Ecological Systems<br>
+              <span class="badge badge-green" style="font-size: 6.8pt; margin: 2px 0;">🌿 Sustainable SITES Certified</span><br>
+              <strong>LDAR 249</strong> Plant Materials
+            </td>
+            <td>
+              • <strong>LDAR 247:</strong> Asset-Based Community Development (ABCD) certification partnering with City of Greensboro &amp; local groups<br>
+              • <strong>LDAR 248:</strong> Sustainable SITES Initiative (SITES AP / Associate) certification pathway via AVA 250-point rating engine<br>
+              • <strong>Internet of Things (IoT) Field Sensors:</strong> Infiltration, soil moisture &amp; Forward-Looking Infrared (FLIR) thermal imaging<br>
+              • <strong>Drone Orthomosaics:</strong> Multi-site living lab photogrammetry
+            </td>
+            <td>
+              <strong>Dallas Bretzman / Charlie Hopper</strong><br>
+              Students earn official Asset-Based Community Development (ABCD) and Sustainable SITES credentials while executing field studies across SFRIC research farm, Inspiration Courtyard, and urban partner sites.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="badge badge-gold">YEAR 3</span><br>
+              <strong>Junior</strong>
+            </td>
+            <td>
+              <strong>LDAR 347</strong> Landform &amp; Stormwater<br>
+              <strong>LDAR 349</strong> GIS Applications in LA<br>
+              <strong>LDAR 348</strong> Master Planning Studio
+            </td>
+            <td>
+              • <strong>AVA V.4 Generative AI:</strong> Computational concept synthesis<br>
+              • <strong>SITES v2 Engine:</strong> 250-point sustainability performance audit<br>
+              • <strong>Federal Emergency Management Agency (FEMA) / USGS Watershed Modeling</strong><br>
+              • <strong>USDA NRCS Environmental Quality Incentives Program (EQIP) Conservation Estimator:</strong> Real practice budgets
+            </td>
+            <td>
+              <strong>Dr. Jun Yang / Jeff Kuehner</strong><br>
+              Students formulate AI prompts from real site constraints, critique machine proposals against hydrology, and optimize sustainable systems.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="badge badge-teal">YEAR 4</span><br>
+              <strong>Senior</strong>
+            </td>
+            <td>
+              <strong>LDAR 447</strong> Collaborative Studio<br>
+              <strong>LDAR 448</strong> Senior Capstone Studio<br>
+              <span class="badge badge-blue" style="font-size: 6.8pt; margin: 2px 0;">📜 Conservation Planner</span><br>
+              <span class="badge badge-teal" style="font-size: 6.8pt; margin: 2px 0;">🚁 FAA Part 107 Pilot</span><br>
+              <strong>LDAR 400</strong> Professional Practice
+            </td>
+            <td>
+              • <strong>Planned Community Design Center (CDC):</strong> Client-facing project delivery with City of Greensboro &amp; NC Cooperative Extension<br>
+              • <strong>USDA Natural Resources Conservation Service (NRCS) Conservation Farm Planner:</strong> Nine-step conservation planning certification<br>
+              • <strong>Federal Aviation Administration (FAA) Part 107 Commercial Drone Pilot preparation</strong><br>
+              • <strong>Autonomous Robotic Surveying:</strong> Boston Dynamics Spot quadruped &amp; Real-Time Kinematic (RTK) drone LiDAR<br>
+              • <strong>Professional Licensure Modules:</strong> Landscape Architect Registration Examination (LARE) exam prep &amp; comprehensive portfolio defense
+            </td>
+            <td>
+              <strong>Chris Harrison / Dr. Jun Yang / NC Cooperative Extension</strong><br>
+              Seniors lead public charrettes through the planned CDC, defend digital twins to stakeholders, and graduate with multiple stackable certifications on track for professional licensure.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 4: THE INTEGRATED TECHNOLOGY & LAB ECOSYSTEM -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">4</span>
+        <span>The Integrated Technology &amp; Lab Ecosystem</span>
+        <span class="section-subtitle-tag">Infrastructure</span>
+      </div>
+
+      <div class="three-col">
+        <div class="card blue-card">
+          <div class="card-title" style="color: var(--aggie-blue);">
+            1. Spatial Intelligence &amp; GIS
+          </div>
+          <p style="font-size: 8.5pt;">
+            <strong>Open Regional GIS &amp; REST APIs</strong><br>
+            Serverless Geographic Information Systems (GIS) proxy connecting Guilford County parcel fabric, North Carolina OneMap (NC OneMap), United States Department of Agriculture (USDA) Soil Survey Geographic Database (SSURGO) soils, United States Geological Survey (USGS) 3D Elevation Program (3DEP) 2-foot contours, Federal Emergency Management Agency National Flood Hazard Layer (FEMA NFHL), U.S. Fish and Wildlife Service National Wetlands Inventory (USFWS NWI), and City of Greensboro zoning ordinances in real time.
+          </p>
+        </div>
+
+        <div class="card teal-card">
+          <div class="card-title" style="color: var(--teal);">
+            2. Generative AI &amp; SITES
+          </div>
+          <p style="font-size: 8.5pt;">
+            <strong>AVA V.4 Design Engine</strong><br>
+            Gemini-powered neural site brief generator, prompt refinement workbench, CesiumJS 3D digital globe, and automated 250-point Sustainable SITES Initiative (SITES v2) sustainability scoring engine.
+          </p>
+        </div>
+
+        <div class="card green-card">
+          <div class="card-title" style="color: var(--nrcs-green);">
+            3. SFRIC Living Labs &amp; CDC
+          </div>
+          <p style="font-size: 8.5pt;">
+            <strong>Multi-Site Network &amp; Community Design Center (CDC)</strong><br>
+            Connecting the 492-acre Research Farm, Inspiration Courtyard, and Holland Bowl with the planned Community Design Center (CDC) for public co-design charrettes, robotic surveying (Spot quadruped), and stackable student certifications.
+          </p>
+        </div>
+      </div>
+
+      <!-- Existing Equipment & Physical Infrastructure Inventory -->
+      <div class="card" style="background: white; border: 1.5px solid var(--aggie-blue); margin-top: 12px; margin-bottom: 2px;">
+        <div class="card-title" style="color: var(--aggie-blue); margin-bottom: 6px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Current Equipment &amp; Physical Infrastructure (Leveraged Assets)
+        </div>
+        <p style="font-size: 8.4pt; color: var(--text); margin-bottom: 8px;">
+          Rather than expending federal grant funds on duplicative capital equipment, the project directly leverages substantial existing surveying, robotic, computing, and sensing infrastructure already accessible through NC A&amp;T and partners:
+        </p>
+        <table style="margin-bottom: 4px; font-size: 8.3pt;">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Hardware / Technology Tier</th>
+              <th style="width: 35%;">Existing Specific Equipment &amp; Specifications</th>
+              <th style="width: 40%;">Grant Deployment &amp; Course Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Terrestrial LiDAR &amp; Surveying</strong></td>
+              <td><strong>Leica BLK360 Terrestrial LiDAR Scanner</strong> (~760M points capture), Real-Time Kinematic (RTK) Global Navigation Satellite System (GNSS) field rovers, National Geodetic Survey (NGS) benchmarks, Leica Cyclone REGISTER 360 PLUS, Autodesk ReCap.</td>
+              <td>Millimeter-precision 3D scans of campus buildings, hardscapes, and Inspiration Courtyard for Building Information Modeling (BIM) and Gaussian splatting digital twins.</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Autonomous Ground Robotics</strong></td>
+              <td><strong>Boston Dynamics Spot Quadruped Robotic Dog</strong> equipped with 3D Light Detection and Ranging (LiDAR) payload; 2-wheeled terrain survey bots (via Looking Glass XR partnership).</td>
+              <td>Autonomous terrain and vegetation scanning across rugged 492-acre farm slopes, wooded stream corridors, and uneven community sites.</td>
+            </tr>
+            <tr>
+              <td><strong>Aerial Drone Fleet &amp; Thermography</strong></td>
+              <td><strong>DJI RTK Aerial Drones</strong> (high-res 4K photogrammetry &amp; multispectral); handheld &amp; drone-mountable <strong>Forward-Looking Infrared (FLIR) Thermal Cameras</strong>.</td>
+              <td>Sub-centimeter orthomosaic mapping of Holland Bowl and Piedmont farms; urban microclimate heat-island analysis in LDAR 248.</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Environmental IoT Sensor Kits</strong></td>
+              <td>In-ground Internet of Things (IoT) soil moisture &amp; electrical conductivity (EC) probes, bio-acoustic pollinator monitors (AudioMoth), on-site weather telemetry stations.</td>
+              <td>Ground-truthing USDA SSURGO database infiltration rates against physical sensor data in LDAR 248 and conservation planning studios.</td>
+            </tr>
+            <tr>
+              <td><strong>Spatial Computing &amp; Field Hubs</strong></td>
+              <td><strong>Meta Quest Pro &amp; Apple Vision Pro Extended Reality (XR) Headsets</strong> (XR Jam space at CH Moore Station); <strong>Mobile Starlink Satellite Field Terminal</strong>; Carver Hall Graphics Processing Unit (GPU) design labs.</td>
+              <td>Immersive client design charrettes through the planned CDC, remote farm internet connectivity, and high-performance BIM modeling.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PAGE BREAK FOR CLEAN PRINTING -->
+    <div class="page-break"></div>
+
+    <!-- SECTION 5: EXACT DELIVERABLES EXPECTED TO PRODUCE -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">5</span>
+        <span>Exact Deliverables Expected to Produce</span>
+        <span class="section-subtitle-tag">Measurable Outputs</span>
+      </div>
+
+      <p>
+        The grant establishes clear, accountable metrics across all three land-grant missions: Teaching, Research, and Extension.
+      </p>
+
+      <div class="two-col">
+        <div class="card blue-card">
+          <div class="card-title" style="color: var(--aggie-blue);">
+            Teaching &amp; Institutional Deliverables
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">T1</div>
+            <div>
+              <strong>8 Redesigned Core Courses:</strong> Complete syllabi, Canvas Learning Management System (LMS) course cartridge imports (.imscc), assignment rubrics, and project exemplar briefs fully deployed across Fall/Spring semesters.
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">T2</div>
+            <div>
+              <strong>120+ Trained BSLA Undergraduates:</strong> Direct experiential training for every enrolled Bachelor of Science in Landscape Architecture (BSLA) student over 3 academic cohorts (2027–2029).
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">T3</div>
+            <div>
+              <strong>Vectorworks Landmark BIM Center:</strong> Full transition of LDAR 171 and upper studios to industry-standard Building Information Modeling (BIM), supported by faculty certification.
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">T4</div>
+            <div>
+              <strong>1890 National Curriculum Open-Source Toolkit:</strong> Freely shared digital package enabling sister Historically Black Colleges and Universities (HBCUs) and 1890 institutions to replicate computational landscape pedagogy.
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">T5</div>
+            <div>
+              <strong>Stackable Industry Credentials Pathway:</strong> Embedded curricula preparing students for USDA Natural Resources Conservation Service (NRCS) Conservation Farm Planner, Asset-Based Community Development (ABCD), and Sustainable SITES Initiative (SITES AP / Associate) certifications.
+            </div>
+          </div>
+        </div>
+
+        <div class="card gold-card">
+          <div class="card-title" style="color: var(--aggie-blue-dark);">
+            Research &amp; Extension Deliverables
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">R1</div>
+            <div>
+              <strong>3-Year Longitudinal AI Pedagogy &amp; Design Behavior Study:</strong> Led by Dr. Jun Yang, tracking student critical thinking, design velocity, spatial synthesis, and cognitive load with AI vs. traditional methods.
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">R2</div>
+            <div>
+              <strong>4+ Peer-Reviewed Articles &amp; Conference Presentations:</strong> Manuscripts and conference papers targeting: (1) Council of Educators in Landscape Architecture (CELA) flagship publications—<em>Landscape Journal</em> and <em>Landscape Research Record</em> (LRR); (2) Environmental Design Research Association (EDRA) Annual Conference &amp; Proceedings (focusing on design behavior, human-AI cognition, and participatory ABCD community co-design); (3) <em>Environment and Behavior</em>; and (4) <em>International Journal of Architectural Computing</em> (IJAC).
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">E1</div>
+            <div>
+              <strong>6 Multi-Site Living Lab Plans:</strong> Master plans and digital twins delivered across SFRIC's network (492-acre farm, Inspiration Courtyard, Holland Bowl, and regional agricultural partners).
+            </div>
+          </div>
+
+          <div class="deliverable-item">
+            <div class="deliverable-icon">E2</div>
+            <div>
+              <strong>SFRIC Community Design Center (CDC) Co-Launch:</strong> Launching the planned collaborative design center in partnership with North Carolina (NC) Cooperative Extension and the City of Greensboro to provide participatory Asset-Based Community Development (ABCD) charrettes and technical assistance across North Carolina.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: SPECIFIC ABILITIES ACQUIRED THROUGH THE PROCESS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">6</span>
+        <span>Specific Abilities Acquired Through the Process</span>
+        <span class="section-subtitle-tag">Competencies &amp; ROI</span>
+      </div>
+
+      <div class="ability-grid">
+        <div class="ability-box">
+          <h5>1. Student Professional &amp; Computational Abilities</h5>
+          <p>
+            Graduates will possess an unmatched competitive edge: fluent in hand diagramming, Vectorworks Landmark Building Information Modeling (BIM) drafting, Python-assisted Geographic Information Systems (GIS) spatial queries, field sensor deployment, and generative AI prompt engineering. They will understand how to design climate-resilient landscapes backed by quantifiable empirical data (Sustainable SITES Initiative [SITES v2] scores, runoff hydrographs, USDA Environmental Quality Incentives Program [EQIP] funding models).
+          </p>
+        </div>
+
+        <div class="ability-box gold-edge">
+          <h5>2. Student Licensing &amp; Career Velocity (LARE Prep)</h5>
+          <p>
+            By synthesizing site engineering, construction detailing, and environmental codes into comprehensive Capstone studio projects and professional portfolio defense, students will enter the workforce with robust preparation for the Landscape Architect Registration Examination (LARE), shortening the path to licensed professional practice.
+          </p>
+        </div>
+
+        <div class="ability-box green-edge">
+          <h5>3. Faculty Scholarship &amp; Tenured Research Capacity</h5>
+          <p>
+            All 4 program faculty gain direct, funded research and pedagogy credentials. Tenure-track faculty build rigorous grant management experience and high-impact publications presenting at the Council of Educators in Landscape Architecture (CELA) and the Environmental Design Research Association (EDRA), positioning NC A&amp;T to successfully compete for larger National Science Foundation (NSF), USDA Agriculture and Food Research Initiative (AFRI), and private foundation grants.
+          </p>
+        </div>
+
+        <div class="ability-box teal-edge">
+          <h5>4. Institutional Stature &amp; 1890 National Leadership</h5>
+          <p>
+            North Carolina A&amp;T becomes recognized by the American Society of Landscape Architects (ASLA), the Council of Educators in Landscape Architecture (CELA), the Environmental Design Research Association (EDRA), and the USDA National Institute of Food and Agriculture (NIFA) as the premier national incubator for diversity and technological excellence in the built environment, driving student recruitment and donor engagement.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stackable Industry Certifications Callout Grid -->
+      <div class="card gold-card" style="margin-top: 10px; margin-bottom: 4px;">
+        <div class="card-title" style="color: var(--aggie-blue-dark); margin-bottom: 6px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 15l-2 5l9-9l-9-9l2 5l-7 4z"></path></svg>
+          Stackable Professional Certifications: Multi-Credential Workforce Distinction
+        </div>
+        <p style="font-size: 8.5pt; margin-bottom: 8px;">
+          By executing real-world projects through SFRIC's multi-site network and the planned <strong>Community Design Center (CDC)</strong>, students progress through industry-standard workflows that yield multiple stackable credentials alongside their LAAB-accredited Bachelor of Science in Landscape Architecture (BSLA) degree:
+        </p>
+        <div class="four-col" style="margin-bottom: 0;">
+          <div style="background: white; border: 1px solid var(--aggie-gold-border); border-radius: 4px; padding: 8px 10px;">
+            <div style="font-family:'Montserrat',sans-serif; font-size: 8.2pt; font-weight: 800; color: var(--aggie-blue); margin-bottom: 3px;">
+              🌱 Conservation Farm Planning
+            </div>
+            <p style="font-size: 7.8pt; color: var(--text); margin-bottom: 0; line-height: 1.35;">
+              USDA Natural Resources Conservation Service (NRCS) Nine-Step Conservation Planning, RUSLE2 erosion modeling, water quality protection, and EQIP practice criteria.
+            </p>
+          </div>
+          <div style="background: white; border: 1px solid var(--aggie-gold-border); border-radius: 4px; padding: 8px 10px;">
+            <div style="font-family:'Montserrat',sans-serif; font-size: 8.2pt; font-weight: 800; color: var(--aggie-blue); margin-bottom: 3px;">
+              🤝 ABCD Community Development
+            </div>
+            <p style="font-size: 7.8pt; color: var(--text); margin-bottom: 0; line-height: 1.35;">
+              Asset-Based Community Development (ABCD) certification: stakeholder mapping, participatory workshops, and equitable co-design.
+            </p>
+          </div>
+          <div style="background: white; border: 1px solid var(--aggie-gold-border); border-radius: 4px; padding: 8px 10px;">
+            <div style="font-family:'Montserrat',sans-serif; font-size: 8.2pt; font-weight: 800; color: var(--aggie-blue); margin-bottom: 3px;">
+              🏆 SITES AP / Associate Pathway
+            </div>
+            <p style="font-size: 7.8pt; color: var(--text); margin-bottom: 0; line-height: 1.35;">
+              Applied 250-point Sustainable SITES Initiative (SITES v2) sustainable landscapes rating system via AVA on Inspiration Courtyard and Holland Bowl.
+            </p>
+          </div>
+          <div style="background: white; border: 1px solid var(--aggie-gold-border); border-radius: 4px; padding: 8px 10px;">
+            <div style="font-family:'Montserrat',sans-serif; font-size: 8.2pt; font-weight: 800; color: var(--aggie-blue); margin-bottom: 3px;">
+              🚁 FAA Part 107 Drone Pilot
+            </div>
+            <p style="font-size: 7.8pt; color: var(--text); margin-bottom: 0; line-height: 1.35;">
+              Federal Aviation Administration (FAA) Part 107 commercial flight operations, multispectral sensor payloads, and photogrammetric 3D point cloud generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 7: 3-YEAR IMPLEMENTATION TIMELINE & BUDGET ALLOCATION -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">7</span>
+        <span>3-Year Implementation Timeline &amp; Budget Allocation</span>
+        <span class="section-subtitle-tag">Execution Roadmap</span>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 14%;">Project Year</th>
+            <th style="width: 20%;">Focus Area</th>
+            <th style="width: 48%;">Key Milestones &amp; Action Items</th>
+            <th style="width: 18%;">Budget ($500k)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>YEAR 1</strong><br>
+              <span class="badge badge-blue">CY 2027</span>
+            </td>
+            <td><strong>Curricular Foundation &amp; Sensor Calibration</strong></td>
+            <td>
+              • Purchase &amp; calibrate environmental sensors (soil moisture, Forward-Looking Infrared [FLIR] thermal, bio-acoustic AudioMoth) &amp; RTK GNSS field kit.<br>
+              • Vectorworks Landmark Building Information Modeling (BIM) faculty training &amp; 4 high-spec studio workstations setup.<br>
+              • Redesign LDAR 147, 170, and 171 with embedded regional GIS data references.<br>
+              • Establish Institutional Review Board (IRB) approval &amp; launch Dr. Yang's AI pedagogy baseline study.
+            </td>
+            <td><strong>$180,000</strong> (36%)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>YEAR 2</strong><br>
+              <span class="badge badge-green">CY 2028</span>
+            </td>
+            <td><strong>Field Integration &amp; AI Studio Launch</strong></td>
+            <td>
+              • Deploy sophomore students to SFRIC farm for live sensor ground-truthing and digital forestry twin calibration with Dr. Omon.<br>
+              • Integrate drone orthomosaics and 3D Tiles into LDAR 248 and 347 site engineering with Dr. Beni.<br>
+              • Introduce AVA V.4 Generative AI &amp; SITES v2 in junior design studios.<br>
+              • Present preliminary pedagogy and design behavior findings at both the Council of Educators in Landscape Architecture (CELA) and Environmental Design Research Association (EDRA) Annual Conferences.
+            </td>
+            <td><strong>$170,000</strong> (34%)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>YEAR 3</strong><br>
+              <span class="badge badge-gold">CY 2029</span>
+            </td>
+            <td><strong>Capstone Twins, Extension &amp; Dissemination</strong></td>
+            <td>
+              • Senior Capstone teams execute complete digital twins through the planned Community Design Center (CDC) on Extension partner sites.<br>
+              • Host 4 multilingual community design charrettes in Greensboro and Piedmont rural corridors.<br>
+              • Submit peer-reviewed journal papers (Dr. Yang to CELA's <em>Landscape Research Record</em> &amp; EDRA proceedings, Prof. Harrison to CELA's <em>Landscape Journal</em>).<br>
+              • Host the National 1890 Digital Landscape Architecture &amp; Community Design Symposium at NC A&amp;T.
+            </td>
+            <td><strong>$150,000</strong> (30%)</td>
+          </tr>
+          <tr class="highlight-row">
+            <td colspan="3"><strong>TOTAL 36-MONTH USDA NIFA CAPACITY BUILDING INVESTMENT</strong></td>
+            <td><strong>$500,000</strong> (100%)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Budget Distribution Breakdown -->
+      <div class="card" style="background: white; border: 1px solid var(--border);">
+        <div class="card-title" style="color: var(--aggie-blue); margin-bottom: 6px;">
+          Budget Allocation Summary by Expense Category ($500,000 Collaborative Education Cap)
+        </div>
+        <div class="four-col" style="margin-bottom: 0;">
+          <div style="font-size: 8.5pt;">
+            <strong>Faculty Summer Salary &amp; Fringe:</strong><br>
+            $187,000 (37.4%)<br>
+            <span style="color: var(--text-muted); font-size: 7.8pt;">PI Harrison + Co-PIs across CAES &amp; CoST</span>
+          </div>
+          <div style="font-size: 8.5pt;">
+            <strong>Student Labor (2+2 Mentorship Model):</strong><br>
+            $120,000 (24.0%)<br>
+            <span style="color: var(--text-muted); font-size: 7.8pt;">2 GRAs ($96k) managing 2 Undergrads ($24k)</span>
+          </div>
+          <div style="font-size: 8.5pt;">
+            <strong>Sensors, UAV Drones &amp; Hardware:</strong><br>
+            $78,000 (15.6%)<br>
+            <span style="color: var(--text-muted); font-size: 7.8pt;">RTK GNSS, IoT arrays, 4 BIM workstations</span>
+          </div>
+          <div style="font-size: 8.5pt;">
+            <strong>Credentials, Travel, Outreach &amp; F&amp;A:</strong><br>
+            $115,000 (23.0%)<br>
+            <span style="color: var(--text-muted); font-size: 7.8pt;">SITES/NRCS exams, CELA/EDRA, F&amp;A cap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 8: MULTI-COLLEGE INVESTIGATOR TEAM & INSTITUTIONAL LEVERAGE -->
+    <div class="section">
+      <div class="section-header">
+        <span class="num">8</span>
+        <span>Multi-College Investigator Team &amp; Institutional Leverage</span>
+        <span class="section-subtitle-tag">Leadership &amp; Synergy</span>
+      </div>
+
+      <!-- Institutional Leverage Highlight Box: Evans-Allen & McIntire-Stennis -->
+      <div class="callout gold" style="margin-bottom: 14px;">
+        <div class="callout-title" style="color: var(--aggie-blue);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Direct Leverage of Active USDA NIFA Evans-Allen Formula Investment (Fund 241206) &amp; McIntire-Stennis Bridge
+        </div>
+        <p style="font-size: 8.6pt; line-height: 1.45; margin-bottom: 6px;">
+          <strong>Proven Preliminary Capacity (Zero Duplication):</strong> This CBG directly builds upon and scales PI W. Chris Harrison's active USDA NIFA Evans-Allen project (<em>"Testing the Potential for a Digital Twin to Enhance the Sustainability of a Campus Landscape,"</em> Banner Fund 241206 / State Match 112014, $237,056.55 total project cost). While Evans-Allen incubated baseline campus UAV photogrammetry, high-resolution LiDAR scans, and prototype sensor calibration, this Capacity Building Grant fulfills the essential next step: embedding these digital capabilities permanently into the accredited 4-year BSLA curriculum, deploying students to the 492-acre University Farm and Inspiration Courtyard living labs, validating student learning through longitudinal CELA/EDRA research, and positioning NC A&amp;T to capture future recurring <strong>USDA McIntire-Stennis Cooperative Forestry Research</strong> formula funding with Dr. Omon Isikhuemhen.
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 24%;">Investigator &amp; Role</th>
+            <th style="width: 26%;">Title, Rank &amp; Department</th>
+            <th style="width: 50%;">Project Responsibility &amp; Strategic Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>W. Christopher Harrison, MLA, ASLA</strong><br><span class="badge badge-gold">Lead PI</span></td>
+            <td>Assistant Professor (Tenure-Track) &amp; BSLA Program Coordinator<br><em>NRED / CAES</em></td>
+            <td>Overall project leadership, fiscal governance, digital twin architecture, freshman design foundations sequence, senior capstone integration, and EDRA/CELA dissemination. Direct bridge to active Evans-Allen Fund 241206.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr. Omoanghe S. Isikhuemhen, Ph.D.</strong><br><span class="badge badge-green">Co-PI • Forestry &amp; Biotech</span></td>
+            <td>Research Professor of Plant Science / Fungal Biotechnology<br><em>NRED / CAES</em></td>
+            <td>Digital Forestry &amp; Living Agroforestry Twin lead across University Farm forest acreage; mycorrhizal truffle ecology, living soil carbon stabilization, forest health modeling, and positioning NC A&amp;T for USDA McIntire-Stennis capacity funding.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr. Leila Hashemi-Beni, Ph.D.</strong><br><span class="badge badge-teal">Co-PI • Cross-College Lead</span></td>
+            <td>Associate Professor of Geomatics &amp; Lab Director<br><em>Dept. of Built Environment / CoST</em></td>
+            <td>Cross-college geospatial lead connecting CAES and the College of Science and Technology (CoST); aerial LiDAR, UAV photogrammetry, 3D WebGIS / 3D Tiles pyramid architecture, and Meta SAM automated point cloud segmentation.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr. Jun Yang, Ph.D.</strong><br><span class="badge badge-blue">Co-PI • Research Lead</span></td>
+            <td>Assistant Professor (Tenure-Track) of Landscape Architecture<br><em>NRED / CAES</em></td>
+            <td>Objective 2 Research Lead: Longitudinal AI pedagogy, design behavior, and cognitive velocity study, junior AI studio integration, quantitative assessment protocols, and CELA / EDRA conference proceedings and journal publications.</td>
+          </tr>
+          <tr>
+            <td><strong>Dallas C. Bretzman, M.S.</strong><br><span class="badge badge-blue">Co-PI • Curriculum Lead</span></td>
+            <td>Program Coordinator &amp; Lecturer of Landscape Architecture<br><em>NRED / CAES</em></td>
+            <td>Scaffolded 4-year curriculum coordinator, Vectorworks Landmark BIM integration, sophomore field sensor deployment at SFRIC, Asset-Based Community Development (ABCD) community charrettes with the City of Greensboro, and plant materials.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr. Porché Spence, Ph.D.</strong><br><span class="badge badge-green">Co-PI • Soil &amp; Water</span></td>
+            <td>Assistant Professor of Environmental Studies; NC Soil &amp; Water Comm. Appointee<br><em>NRED / CAES</em></td>
+            <td>Soil health and water quality monitoring, IoT environmental sensor integration, and student workforce certification alignment with USDA NRCS Conservation Farm Planning standards.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr. Momtanu Chakraborty, Ph.D.</strong><br><span class="badge badge-outline">Co-Investigator</span></td>
+            <td>Assistant Professor of Biological Engineering; Canvas Champion<br><em>NRED / CAES</em></td>
+            <td>UAV drone flight operations, Pix4D photogrammetric processing, ground-to-air sensor fusion, and modular Canvas LMS course cartridge packaging for national dissemination.</td>
+          </tr>
+          <tr>
+            <td><strong>Jeffrey A. Kuehner, MLA, ASLA</strong><br><span class="badge badge-outline">Co-Investigator</span></td>
+            <td>Lecturer of Landscape Architecture<br><em>NRED / CAES</em></td>
+            <td>Site engineering, professional construction detailing, LDAR 345/347 stormwater modeling, and technical construction documentation standards.</td>
+          </tr>
+          <tr>
+            <td><strong>Charlie Hopper</strong><br><span class="badge badge-gold">Extension Partner</span></td>
+            <td>Director, Small Farm Research &amp; Innovation Center (SFRIC)<br><em>CAES / NC Cooperative Extension</em></td>
+            <td>Extension liaison, SFRIC multi-site living lab access (492-acre Farm, Inspiration Courtyard, Holland Bowl), Community Design Center (CDC) co-leadership, and farmer/municipal field trials.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Official Report Footer -->
+    <footer class="report-footer">
+      <div>
+        <strong>North Carolina Agricultural and Technical State University</strong> — Department of Natural Resources &amp; Environmental Design
+      </div>
+      <div>
+        Bachelor of Science in Landscape Architecture (BSLA) Program Elevation Plan • USDA NIFA CBG FY 2026/2027 • <strong>WORKING DRAFT FOR CO-PI REVIEW &amp; INPUT</strong>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

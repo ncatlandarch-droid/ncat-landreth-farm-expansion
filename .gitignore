@@ -25,4 +25,5 @@ test_*.html
 W
 node_modules/
 .netlify/
+dist/
 
